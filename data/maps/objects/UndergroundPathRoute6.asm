@@ -12,6 +12,6 @@ UndergroundPathRoute6_Object:
 	def_bg_events
 
 	def_object_events
-	object_event  2,  3, SPRITE_GIRL, STAY, NONE, TEXT_UNDERGROUNDPATHROUTE6_GIRL
+	; object_event  2,  3, SPRITE_GIRL, STAY, NONE, TEXT_UNDERGROUNDPATHROUTE6_GIRL
 
 	def_warps_to UNDERGROUND_PATH_ROUTE_6
