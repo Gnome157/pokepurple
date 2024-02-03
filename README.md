@@ -1,3 +1,5 @@
+This is a fork of pokered/pokeblue, for my own personal use. The description provided below is from the original page, and has been left unmodified.
+```
 # Pokémon Red and Blue [![Build Status][ci-badge]][ci]
 
 This is a disassembly of Pokémon Red and Blue.
@@ -27,3 +29,4 @@ For other pret projects, see [pret.github.io](https://pret.github.io/).
 [symbols]: https://github.com/pret/pokered/tree/symbols
 [ci]: https://github.com/pret/pokered/actions
 [ci-badge]: https://github.com/pret/pokered/actions/workflows/main.yml/badge.svg
+```
