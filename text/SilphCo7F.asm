@@ -20,7 +20,7 @@ _SilphCo7FSilphWorkerM1PorygonDescriptionText::
 
 	para "I think you will"
 	line "be a good trainer"
-	cont "for PORGON!"
+	cont "for PORYGON!"
 	done
 
 _SilphCo7FSilphWorkerM1IsOurPresidentOkText::
