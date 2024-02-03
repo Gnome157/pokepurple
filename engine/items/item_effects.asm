@@ -857,7 +857,7 @@ ItemUseMedicine:
 .checkItemType
 	ld a, [wcf91]
 	cp REVIVE
-	jp nc, .healingItemNoEffect
+	jr nc, .healHP ; if it's a Revive or Max Revive
 	cp FULL_HEAL
 	jr z, .cureStatusAilment ; if it's a Full Heal
 	cp HP_UP
@@ -924,8 +924,9 @@ ItemUseMedicine:
 .fainted
 	ld a, [wcf91]
 	cp REVIVE
-	jp .healingItemNoEffect
+	jr z, .updateInBattleFaintedData
 	cp MAX_REVIVE
+	jr z, .updateInBattleFaintedData
 	jp .healingItemNoEffect
 .updateInBattleFaintedData
 	ld a, [wIsInBattle]
@@ -1123,7 +1124,7 @@ ItemUseMedicine:
 	cp HYPER_POTION
 	jr c, .setCurrentHPToMaxHp ; if using a Full Restore or Max Potion
 	cp MAX_REVIVE
-	jp .healingItemNoEffect
+	jr z, .setCurrentHPToMaxHp ; if using a Max Revive
 	jr .updateInBattleData
 .setCurrentHPToHalfMaxHP
 	dec hl
@@ -1213,9 +1214,9 @@ ItemUseMedicine:
 	ld [wPartyMenuTypeOrMessageID], a
 	ld a, [wcf91]
 	cp REVIVE
-	jp .healingItemNoEffect
+	jr z, .showHealingItemMessage
 	cp MAX_REVIVE
-	jp .healingItemNoEffect
+	jr z, .showHealingItemMessage
 	ld a, POTION_MSG
 	ld [wPartyMenuTypeOrMessageID], a
 	jr .showHealingItemMessage
