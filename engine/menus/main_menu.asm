@@ -372,7 +372,7 @@ DisplayContinueGameInfo:
 	call PrintPlayTime
 	ld a, 1
 	ldh [hAutoBGTransferEnabled], a
-	ld c, 5
+	ld c, 30
 	jp DelayFrames
 
 PrintSaveScreenText:
@@ -398,7 +398,7 @@ PrintSaveScreenText:
 	call PrintPlayTime
 	ld a, $1
 	ldh [hAutoBGTransferEnabled], a
-	ld c, 5
+	ld c, 30
 	jp DelayFrames
 
 PrintNumBadges:

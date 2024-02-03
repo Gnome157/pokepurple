@@ -9,8 +9,8 @@ _SilphCo7FSilphWorkerM1HaveThisPokemonText::
 	cont "for saving us."
 	prompt
 
-_SilphCo7FSilphWorkerM1PorygonDescriptionText::
-	text "It's PORYGON. It's"
+_SilphCo7FSilphWorkerM1LaprasDescriptionText::
+	text "It's LAPRAS. It's"
 	line "very intelligent."
 
 	para "We kept it in our"
@@ -20,7 +20,11 @@ _SilphCo7FSilphWorkerM1PorygonDescriptionText::
 
 	para "I think you will"
 	line "be a good trainer"
-	cont "for PORYGON!"
+	cont "for LAPRAS!"
+
+	para "It's a good"
+	line "swimmer. It'll"
+	cont "give you a lift!"
 	done
 
 _SilphCo7FSilphWorkerM1IsOurPresidentOkText::

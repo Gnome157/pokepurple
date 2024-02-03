@@ -145,8 +145,8 @@ SilphCo7FDefaultScript:
 	call SetSpriteMovementBytesToFF
 	ld de, .RivalMovementUp
 	ld a, [wCoordIndex]
-	ld [wSavedCoordIndex], a
-	cp 1 ; index of second, lower entry in .RivalEncounterCoordinates
+	ld [wcf0d], a
+	cp $1
 	jr z, .full_rival_movement
 	inc de
 .full_rival_movement
@@ -225,8 +225,8 @@ SilphCo7FRivalAfterBattleScript:
 	call PlaySound
 	farcall Music_RivalAlternateStart
 	ld de, .RivalWalkAroundPlayerMovement
-	ld a, [wSavedCoordIndex]
-	cp 1 ; index of second, lower entry in SilphCo7FDefaultScript.RivalEncounterCoordinates
+	ld a, [wcf0d]
+	cp $1
 	jr nz, .walk_around_player
 	ld de, .RivalExitRightMovement
 .walk_around_player
@@ -294,27 +294,27 @@ SilphCo7TrainerHeader3:
 	db -1 ; end
 
 SilphCo7FSilphWorkerM1Text:
-; porygon guy
+; lapras guy
 	text_asm
 	ld a, [wd72e]
-	bit 0, a ; got porygon?
-	jr z, .give_porygon
+	bit 0, a ; got lapras?
+	jr z, .give_lapras
 	CheckEvent EVENT_BEAT_SILPH_CO_GIOVANNI
 	jr nz, .saved_silph
 	ld hl, .IsOurPresidentOkText
 	call PrintText
 	jr .done
-.give_porygon
+.give_lapras
 	ld hl, .HaveThisPokemonText
 	call PrintText
-	lb bc, PORYGON, 15
+	lb bc, LAPRAS, 15
 	call GivePokemon
 	jr nc, .done
 	ld a, [wSimulatedJoypadStatesEnd]
 	and a
 	call z, WaitForTextScrollButtonPress
 	call EnableAutoTextBoxDrawing
-	ld hl, .PorygonDescriptionText
+	ld hl, .LaprasDescriptionText
 	call PrintText
 	ld hl, wd72e
 	set 0, [hl]
@@ -329,8 +329,8 @@ SilphCo7FSilphWorkerM1Text:
 	text_far _SilphCo7FSilphWorkerM1HaveThisPokemonText
 	text_end
 
-.PorygonDescriptionText
-	text_far _SilphCo7FSilphWorkerM1PorygonDescriptionText
+.LaprasDescriptionText
+	text_far _SilphCo7FSilphWorkerM1LaprasDescriptionText
 	text_end
 
 .IsOurPresidentOkText

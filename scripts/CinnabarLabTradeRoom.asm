@@ -4,8 +4,8 @@ CinnabarLabTradeRoom_Script:
 CinnabarLabTradeRoom_TextPointers:
 	def_text_pointers
 	dw_const CinnabarLabTradeRoomSuperNerdText, TEXT_CINNABARLABTRADEROOM_SUPER_NERD
-	; dw_const CinnabarLabTradeRoomGrampsText,    TEXT_CINNABARLABTRADEROOM_GRAMPS
-	; dw_const CinnabarLabTradeRoomBeautyText,    TEXT_CINNABARLABTRADEROOM_BEAUTY
+	dw_const CinnabarLabTradeRoomGrampsText,    TEXT_CINNABARLABTRADEROOM_GRAMPS
+	dw_const CinnabarLabTradeRoomBeautyText,    TEXT_CINNABARLABTRADEROOM_BEAUTY
 
 CinnabarLabTradeRoomSuperNerdText:
 	text_far _CinnabarLabTradeRoomSuperNerdText

@@ -912,7 +912,7 @@ _TrainerAboutToUseText::
 	text_ram wTrainerName
 	text " is"
 	line "about to use"
-	cont "@"
+	cont"@"
 	text_ram wEnemyMonNick
 	text "!"
 
@@ -1211,8 +1211,8 @@ _GainedText::
 	text_end
 
 _WithExpAllText::
-	text "Party gained,"
-	next "@"
+	text "with EXP.ALL,"
+	cont "@"
 	text_end
 
 _BoostedText::

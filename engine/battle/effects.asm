@@ -118,7 +118,7 @@ PoisonEffect:
 	ret nc
 .inflictPoison
 	dec hl
-	set PSN, [hl]
+	set 3, [hl] ; mon is now poisoned
 	push de
 	dec de
 	ldh a, [hWhoseTurn]
@@ -544,11 +544,11 @@ StatModifierDownEffect:
 	ld hl, wPlayerMonStatMods
 	ld de, wEnemyMoveEffect
 	ld bc, wPlayerBattleStatus1
-	; ld a, [wLinkState]
-	; cp LINK_STATE_BATTLING
-	; jr z, .statModifierDownEffect
-	; call BattleRandom
-	; cp 25 percent + 1 ; chance to miss by in regular battle
+	ld a, [wLinkState]
+	cp LINK_STATE_BATTLING
+	jr z, .statModifierDownEffect
+	call BattleRandom
+	cp 25 percent + 1 ; chance to miss by in regular battle
 	jp c, MoveMissed
 .statModifierDownEffect
 	call CheckTargetSubstitute ; can't hit through substitute
@@ -1460,9 +1460,9 @@ PlayBattleAnimation2:
 	ld [wAnimationID], a
 	ldh a, [hWhoseTurn]
 	and a
-	ld a, ANIMATIONTYPE_SHAKE_SCREEN_HORIZONTALLY_SLOW_2
+	ld a, $6
 	jr z, .storeAnimationType
-	ld a, ANIMATIONTYPE_SHAKE_SCREEN_HORIZONTALLY_SLOW
+	ld a, $3
 .storeAnimationType
 	ld [wAnimationType], a
 	jp PlayBattleAnimationGotID
