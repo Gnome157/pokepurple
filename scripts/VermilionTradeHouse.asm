@@ -3,7 +3,7 @@ VermilionTradeHouse_Script:
 
 VermilionTradeHouse_TextPointers:
 	def_text_pointers
-	dw_const VermilionTradeHouseLittleGirlText, TEXT_VERMILIONTRADEHOUSE_LITTLE_GIRL
+	; dw_const VermilionTradeHouseLittleGirlText, TEXT_VERMILIONTRADEHOUSE_LITTLE_GIRL
 
 VermilionTradeHouseLittleGirlText:
 	text_asm
