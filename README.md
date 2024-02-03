@@ -1,4 +1,4 @@
-```This is a fork of pokered/pokeblue, for my own personal use. The description provided below is from the original page, and has been left unmodified.```
+```This is a fork of pokered, for my own personal use. The description provided below is from the original page, and has been left unmodified.```
 
 # Pokémon Red and Blue [![Build Status][ci-badge]][ci]
 
