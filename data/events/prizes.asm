@@ -7,81 +7,50 @@ NoThanksText:
 	db "NO THANKS@"
 
 PrizeMenuMon1Entries:
-<<<<<<< HEAD
-	db DROWZEE
-	db MR_MIME
+	db CHANSEY
+	db CHANSEY
 IF DEF(_RED)
-	db ABRA
+	db CHANSEY
 ENDC
 IF DEF(_BLUE)
-	db ABRA
-=======
-	db ABRA
-	db CLEFAIRY
-IF DEF(_RED)
-	db NIDORINA
-ENDC
-IF DEF(_BLUE)
-	db NIDORINO
->>>>>>> parent of 24fafef4 (Difficulty)
+	db CHANSEY
 ENDC
 	db "@"
 
 PrizeMenuMon1Cost:
 IF DEF(_RED)
-<<<<<<< HEAD
-	bcd2 200
-	bcd2 250
+	bcd2 9999
+	bcd2 9999
 ENDC
 IF DEF(_BLUE)
-	bcd2 200
-	bcd2 250
+	bcd2 9999
+	bcd2 9999
 ENDC
-	bcd2 500
-=======
-	bcd2 180
-	bcd2 500
-ENDC
-IF DEF(_BLUE)
-	bcd2 120
-	bcd2 750
-ENDC
-	bcd2 1200
->>>>>>> parent of 24fafef4 (Difficulty)
+	bcd2 9999
 	db "@"
 
 PrizeMenuMon2Entries:
 IF DEF(_RED)
-	db DRATINI
-<<<<<<< HEAD
-	db DITTO
+	db CHANSEY
+	db CHANSEY
 ENDC
 IF DEF(_BLUE)
-	db DRATINI
-	db DITTO
+	db CHANSEY
+	db CHANSEY
 ENDC
-	db LAPRAS
-=======
-	db SCYTHER
-ENDC
-IF DEF(_BLUE)
-	db PINSIR
-	db DRATINI
-ENDC
-	db PORYGON
->>>>>>> parent of 24fafef4 (Difficulty)
+	db CHANSEY
 	db "@"
 
 PrizeMenuMon2Cost:
 IF DEF(_RED)
-	bcd2 2800
-	bcd2 5500
+	bcd2 9999
+	bcd2 9999
 	bcd2 9999
 ENDC
 IF DEF(_BLUE)
-	bcd2 2500
-	bcd2 4600
-	bcd2 6500
+	bcd2 9999
+	bcd2 9999
+	bcd2 9999
 ENDC
 	db "@"
 
@@ -92,13 +61,7 @@ PrizeMenuTMsEntries:
 	db "@"
 
 PrizeMenuTMsCost:
-<<<<<<< HEAD
-	bcd2 5000
-	bcd2 5000
-	bcd2 5000
-=======
-	bcd2 3300
-	bcd2 5500
-	bcd2 7700
->>>>>>> parent of 24fafef4 (Difficulty)
+	bcd2 9999
+	bcd2 9999
+	bcd2 9999
 	db "@"

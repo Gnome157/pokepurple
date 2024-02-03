@@ -7,11 +7,7 @@ MtMoonPokecenter_TextPointers:
 	dw_const MtMoonPokecenterNurseText,            TEXT_MTMOONPOKECENTER_NURSE
 	dw_const MtMoonPokecenterYoungsterText,        TEXT_MTMOONPOKECENTER_YOUNGSTER
 	dw_const MtMoonPokecenterGentlemanText,        TEXT_MTMOONPOKECENTER_GENTLEMAN
-<<<<<<< HEAD
-	dw_const MtMoonPokecenterMewSalesmanText, 	   TEXT_MTMOONPOKECENTER_MEW_SALESMAN
-=======
-	dw_const MtMoonPokecenterMagikarpSalesmanText, TEXT_MTMOONPOKECENTER_MAGIKARP_SALESMAN
->>>>>>> parent of 24fafef4 (Difficulty)
+	; dw_const MtMoonPokecenterMagikarpSalesmanText, TEXT_MTMOONPOKECENTER_MAGIKARP_SALESMAN
 	dw_const MtMoonPokecenterClipboardText,        TEXT_MTMOONPOKECENTER_CLIPBOARD
 	dw_const MtMoonPokecenterLinkReceptionistText, TEXT_MTMOONPOKECENTER_LINK_RECEPTIONIST
 
@@ -26,10 +22,10 @@ MtMoonPokecenterGentlemanText:
 	text_far _MtMoonPokecenterGentlemanText
 	text_end
 
-MtMoonPokecenterMewSalesmanText:
+MtMoonPokecenterMagikarpSalesmanText:
 	text_asm
-	CheckEvent EVENT_BOUGHT_MEW, 1
-	jp c, .alreadyBoughtMew
+	CheckEvent EVENT_BOUGHT_MAGIKARP, 1
+	jp c, .alreadyBoughtMagikarp
 	ld hl, .IGotADealText
 	call PrintText
 	ld a, MONEY_BOX
@@ -48,7 +44,7 @@ MtMoonPokecenterMewSalesmanText:
 	ld hl, .NoMoneyText
 	jr .printText
 .enoughMoney
-	lb bc, MEW, 5
+	lb bc, MAGIKARP, 5
 	call GivePokemon
 	jr nc, .done
 	xor a
@@ -63,12 +59,12 @@ MtMoonPokecenterMewSalesmanText:
 	ld a, MONEY_BOX
 	ld [wTextBoxID], a
 	call DisplayTextBoxID
-	SetEvent EVENT_BOUGHT_MEW
+	SetEvent EVENT_BOUGHT_MAGIKARP
 	jr .done
 .choseNo
 	ld hl, .NoText
 	jr .printText
-.alreadyBoughtMew
+.alreadyBoughtMagikarp
 	ld hl, .NoRefundsText
 .printText
 	call PrintText
@@ -76,19 +72,19 @@ MtMoonPokecenterMewSalesmanText:
 	jp TextScriptEnd
 
 .IGotADealText
-	text_far _MtMoonPokecenterMewSalesmanIGotADealText
+	text_far _MtMoonPokecenterMagikarpSalesmanIGotADealText
 	text_end
 
 .NoText
-	text_far _MtMoonPokecenterMewSalesmanNoText
+	text_far _MtMoonPokecenterMagikarpSalesmanNoText
 	text_end
 
 .NoMoneyText
-	text_far _MtMoonPokecenterMewSalesmanNoMoneyText
+	text_far _MtMoonPokecenterMagikarpSalesmanNoMoneyText
 	text_end
 
 .NoRefundsText
-	text_far _MtMoonPokecenterMewSalesmanNoRefundsText
+	text_far _MtMoonPokecenterMagikarpSalesmanNoRefundsText
 	text_end
 
 MtMoonPokecenterClipboardText:

@@ -1,5 +1,5 @@
 PokemonMansionB1F_Script:
-	call MansionB1FCheckReplaceSwitchDoorBlocks
+	call Mansion4Script_523cf
 	call EnableAutoTextBoxDrawing
 	ld hl, Mansion4TrainerHeaders
 	ld de, PokemonMansionB1F_ScriptPointers
@@ -8,39 +8,39 @@ PokemonMansionB1F_Script:
 	ld [wPokemonMansionB1FCurScript], a
 	ret
 
-MansionB1FCheckReplaceSwitchDoorBlocks:
+Mansion4Script_523cf:
 	ld hl, wCurrentMapScriptFlags
 	bit 5, [hl]
 	res 5, [hl]
 	ret z
 	CheckEvent EVENT_MANSION_SWITCH_ON
-	jr nz, .switchTurnedOn
+	jr nz, .asm_523ff
 	ld a, $e
 	ld bc, $80d
-	call Mansion2ReplaceBlock
+	call Mansion2Script_5202f
 	ld a, $e
 	ld bc, $b06
-	call Mansion2ReplaceBlock
+	call Mansion2Script_5202f
 	ld a, $5f
 	ld bc, $304
-	call Mansion2ReplaceBlock
+	call Mansion2Script_5202f
 	ld a, $54
 	ld bc, $808
-	call Mansion2ReplaceBlock
+	call Mansion2Script_5202f
 	ret
-.switchTurnedOn
+.asm_523ff
 	ld a, $2d
 	ld bc, $80d
-	call Mansion2ReplaceBlock
+	call Mansion2Script_5202f
 	ld a, $5f
 	ld bc, $b06
-	call Mansion2ReplaceBlock
+	call Mansion2Script_5202f
 	ld a, $e
 	ld bc, $304
-	call Mansion2ReplaceBlock
+	call Mansion2Script_5202f
 	ld a, $e
 	ld bc, $808
-	call Mansion2ReplaceBlock
+	call Mansion2Script_5202f
 	ret
 
 Mansion4Script_Switches::
@@ -63,10 +63,10 @@ PokemonMansionB1F_TextPointers:
 	def_text_pointers
 	dw_const PokemonMansionB1FBurglarText,   TEXT_POKEMONMANSIONB1F_BURGLAR
 	dw_const PokemonMansionB1FScientistText, TEXT_POKEMONMANSIONB1F_SCIENTIST
-	dw_const PickUpItemText,                 TEXT_POKEMONMANSIONB1F_RARE_CANDY
-	dw_const PickUpItemText,                 TEXT_POKEMONMANSIONB1F_FULL_RESTORE
-	dw_const PickUpItemText,                 TEXT_POKEMONMANSIONB1F_TM_BLIZZARD
-	dw_const PickUpItemText,                 TEXT_POKEMONMANSIONB1F_TM_SOLARBEAM
+	; dw_const PickUpItemText,                 TEXT_POKEMONMANSIONB1F_RARE_CANDY
+	; dw_const PickUpItemText,                 TEXT_POKEMONMANSIONB1F_FULL_RESTORE
+	; dw_const PickUpItemText,                 TEXT_POKEMONMANSIONB1F_TM_BLIZZARD
+	; dw_const PickUpItemText,                 TEXT_POKEMONMANSIONB1F_TM_SOLARBEAM
 	dw_const PokemonMansionB1FDiaryText,     TEXT_POKEMONMANSIONB1F_DIARY
 	dw_const PickUpItemText,                 TEXT_POKEMONMANSIONB1F_SECRET_KEY
 	dw_const PokemonMansion2FSwitchText,     TEXT_POKEMONMANSIONB1F_SWITCH ; This switch uses the text script from the 2F.

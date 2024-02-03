@@ -93,9 +93,6 @@ TalkToTrainer::
 	call ReadTrainerHeaderInfo     ; read flag's bit
 	ld a, $2
 	call ReadTrainerHeaderInfo     ; read flag's byte ptr
-	ld a, [wPartyCount]
-	and a
-	jr z, .SeNaoTemMonAfterBattleText
 	ld a, [wTrainerHeaderFlagBit]
 	ld c, a
 	ld b, FLAG_TEST
@@ -103,7 +100,6 @@ TalkToTrainer::
 	ld a, c
 	and a
 	jr z, .trainerNotYetFought     ; test trainer's flag
-.SeNaoTemMonAfterBattleText
 	ld a, $6
 	call ReadTrainerHeaderInfo     ; print after battle text
 	jp PrintText
@@ -153,7 +149,7 @@ ENDC
 	xor a ; EXCLAMATION_BUBBLE
 	ld [wWhichEmotionBubble], a
 	predef EmotionBubble
-	ld a, $ff
+	ld a, D_RIGHT | D_LEFT | D_UP | D_DOWN
 	ld [wJoyIgnore], a
 	xor a
 	ldh [hJoyHeld], a
@@ -167,8 +163,6 @@ DisplayEnemyTrainerTextAndStartBattle::
 	ld a, [wd730]
 	and $1
 	ret nz ; return if the enemy trainer hasn't finished walking to the player's sprite
-	farcall FaceEnemyTrainer
-	xor a
 	ld [wJoyIgnore], a
 	ld a, [wSpriteIndex]
 	ldh [hSpriteIndexOrTextID], a
@@ -264,7 +258,7 @@ SetSpritePosition1::
 SetSpritePosition2::
 	ld hl, _SetSpritePosition2
 SpritePositionBankswitch::
-	ld b, BANK("Trainer Sight")
+	ld b, BANK(_GetSpritePosition1) ; BANK(_GetSpritePosition2), BANK(_SetSpritePosition1), BANK(_SetSpritePosition2)
 	jp Bankswitch ; indirect jump to one of the four functions
 
 CheckForEngagingTrainers::

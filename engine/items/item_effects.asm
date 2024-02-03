@@ -23,7 +23,7 @@ ItemUsePtrTable:
 	dw ItemUseBall       ; POKE_BALL
 	dw ItemUseTownMap    ; TOWN_MAP
 	dw ItemUseBicycle    ; BICYCLE
-	dw ItemUseSurfboard  ; SURFBOARD
+	dw ItemUseSurfboard  ; out-of-battle Surf effect
 	dw ItemUseBall       ; SAFARI_BALL
 	dw ItemUsePokedex    ; POKEDEX
 	dw ItemUseEvoStone   ; MOON_STONE
@@ -60,19 +60,19 @@ ItemUsePtrTable:
 	dw UnusableItem      ; DOME_FOSSIL
 	dw UnusableItem      ; HELIX_FOSSIL
 	dw UnusableItem      ; SECRET_KEY
-	dw UnusableItem      ; ITEM_2C
+	dw UnusableItem
 	dw UnusableItem      ; BIKE_VOUCHER
 	dw ItemUseXAccuracy  ; X_ACCURACY
 	dw ItemUseEvoStone   ; LEAF_STONE
 	dw ItemUseCardKey    ; CARD_KEY
 	dw UnusableItem      ; NUGGET
-	dw UnusableItem      ; ITEM_32
-	dw ItemUsePokeDoll   ; POKE_DOLL
+	dw UnusableItem      ; ??? PP_UP
+	dw ItemUsePokedoll   ; POKE_DOLL
 	dw ItemUseMedicine   ; FULL_HEAL
 	dw ItemUseMedicine   ; REVIVE
 	dw ItemUseMedicine   ; MAX_REVIVE
 	dw ItemUseGuardSpec  ; GUARD_SPEC
-	dw ItemUseSuperRepel ; SUPER_REPEL
+	dw ItemUseSuperRepel ; SUPER_REPL
 	dw ItemUseMaxRepel   ; MAX_REPEL
 	dw ItemUseDireHit    ; DIRE_HIT
 	dw UnusableItem      ; COIN
@@ -89,13 +89,13 @@ ItemUsePtrTable:
 	dw ItemUseOaksParcel ; OAKS_PARCEL
 	dw ItemUseItemfinder ; ITEMFINDER
 	dw UnusableItem      ; SILPH_SCOPE
-	dw ItemUsePokeFlute  ; POKE_FLUTE
+	dw ItemUsePokeflute  ; POKE_FLUTE
 	dw UnusableItem      ; LIFT_KEY
 	dw UnusableItem      ; EXP_ALL
 	dw ItemUseOldRod     ; OLD_ROD
 	dw ItemUseGoodRod    ; GOOD_ROD
 	dw ItemUseSuperRod   ; SUPER_ROD
-	dw ItemUsePPUp       ; PP_UP
+	dw ItemUsePPUp       ; PP_UP (real one)
 	dw ItemUsePPRestore  ; ETHER
 	dw ItemUsePPRestore  ; MAX_ETHER
 	dw ItemUsePPRestore  ; ELIXER
@@ -665,7 +665,7 @@ ItemUseBicycle:
 .printText
 	jp PrintText
 
-; indirectly used by SURF in StartMenu_Pokemon.surf
+; used for Surf out-of-battle effect
 ItemUseSurfboard:
 	ld a, [wWalkBikeSurfState]
 	ld [wWalkBikeSurfStateCopy], a
@@ -740,7 +740,7 @@ ItemUseSurfboard:
 	ld a, b
 	ld [wSimulatedJoypadStatesEnd], a
 	xor a
-	ld [wUnusedCD39], a
+	ld [wWastedByteCD39], a
 	inc a
 	ld [wSimulatedJoypadStatesIndex], a
 	ret
@@ -857,7 +857,7 @@ ItemUseMedicine:
 .checkItemType
 	ld a, [wcf91]
 	cp REVIVE
-	jr nc, .healHP ; if it's a Revive or Max Revive
+	jp nc, .healingItemNoEffect
 	cp FULL_HEAL
 	jr z, .cureStatusAilment ; if it's a Full Heal
 	cp HP_UP
@@ -924,9 +924,8 @@ ItemUseMedicine:
 .fainted
 	ld a, [wcf91]
 	cp REVIVE
-	jr z, .updateInBattleFaintedData
+	jp .healingItemNoEffect
 	cp MAX_REVIVE
-	jr z, .updateInBattleFaintedData
 	jp .healingItemNoEffect
 .updateInBattleFaintedData
 	ld a, [wIsInBattle]
@@ -1124,7 +1123,7 @@ ItemUseMedicine:
 	cp HYPER_POTION
 	jr c, .setCurrentHPToMaxHp ; if using a Full Restore or Max Potion
 	cp MAX_REVIVE
-	jr z, .setCurrentHPToMaxHp ; if using a Max Revive
+	jp .healingItemNoEffect
 	jr .updateInBattleData
 .setCurrentHPToHalfMaxHP
 	dec hl
@@ -1175,7 +1174,7 @@ ItemUseMedicine:
 	xor a
 	ld [wBattleMonStatus], a ; remove the status ailment in the in-battle pokemon data
 .calculateHPBarCoords
-	hlcoord 4, -1
+	ld hl, wShadowOAMSprite36
 	ld bc, 2 * SCREEN_WIDTH
 	inc d
 .calculateHPBarCoordsLoop
@@ -1214,9 +1213,9 @@ ItemUseMedicine:
 	ld [wPartyMenuTypeOrMessageID], a
 	ld a, [wcf91]
 	cp REVIVE
-	jr z, .showHealingItemMessage
+	jp .healingItemNoEffect
 	cp MAX_REVIVE
-	jr z, .showHealingItemMessage
+	jp .healingItemNoEffect
 	ld a, POTION_MSG
 	ld [wPartyMenuTypeOrMessageID], a
 	jr .showHealingItemMessage
@@ -1427,9 +1426,6 @@ VitaminNoEffectText:
 
 INCLUDE "data/battle/stat_names.asm"
 
-; for BOULDERBADGE when used from the
-; ITEM window, which corresponds to
-; SAFARI_BAIT during Safari Game encounters
 ItemUseBait:
 	ld hl, ThrewBaitText
 	call PrintText
@@ -1440,9 +1436,6 @@ ItemUseBait:
 	ld de, wSafariEscapeFactor ; escape factor
 	jr BaitRockCommon
 
-; for CASCADEBADGE when used from the
-; ITEM window, which corresponds to
-; SAFARI_ROCK during Safari Game encounters
 ItemUseRock:
 	ld hl, ThrewRockText
 	call PrintText
@@ -1488,7 +1481,7 @@ ThrewRockText:
 	text_far _ThrewRockText
 	text_end
 
-; indirectly used by DIG in StartMenu_Pokemon.dig
+; also used for Dig out-of-battle effect
 ItemUseEscapeRope:
 	ld a, [wIsInBattle]
 	and a
@@ -1603,7 +1596,7 @@ ItemUseCardKey:
 
 INCLUDE "data/events/card_key_coords.asm"
 
-ItemUsePokeDoll:
+ItemUsePokedoll:
 	ld a, [wIsInBattle]
 	dec a
 	jp nz, ItemUseNotTime
@@ -1668,7 +1661,7 @@ ItemUseXStat:
 	ld [hl], a ; restore [wPlayerMoveNum]
 	ret
 
-ItemUsePokeFlute:
+ItemUsePokeflute:
 	ld a, [wIsInBattle]
 	and a
 	jr nz, .inBattle

@@ -1,7 +1,7 @@
 	object_const_def
-	const_export WARDENSHOUSE_WARDEN
-	const_export WARDENSHOUSE_RARE_CANDY
-	const_export WARDENSHOUSE_BOULDER
+	const WARDENSHOUSE_WARDEN
+	const WARDENSHOUSE_RARE_CANDY
+	const WARDENSHOUSE_BOULDER
 
 WardensHouse_Object:
 	db $17 ; border block
@@ -16,7 +16,6 @@ WardensHouse_Object:
 
 	def_object_events
 	object_event  2,  3, SPRITE_WARDEN, STAY, NONE, TEXT_WARDENSHOUSE_WARDEN
-	object_event  8,  3, SPRITE_POKE_BALL, STAY, NONE, TEXT_WARDENSHOUSE_RARE_CANDY, RARE_CANDY
 	object_event  8,  4, SPRITE_BOULDER, STAY, BOULDER_MOVEMENT_BYTE_2, TEXT_WARDENSHOUSE_BOULDER
 
 	def_warps_to WARDENS_HOUSE

@@ -37,7 +37,6 @@ VictoryRoad2FReplaceTileBlockScript:
 	ret
 
 VictoryRoad2F_ScriptPointers:
-	def_script_pointers
 	dw_const VictoryRoad2FDefaultScript,            SCRIPT_VICTORYROAD2F_DEFAULT
 	dw_const DisplayEnemyTrainerTextAndStartBattle, SCRIPT_VICTORYROAD2F_START_BATTLE
 	dw_const EndTrainerBattle,                      SCRIPT_VICTORYROAD2F_END_BATTLE
@@ -75,11 +74,11 @@ VictoryRoad2F_TextPointers:
 	dw_const VictoryRoad2FCooltrainerMText, TEXT_VICTORYROAD2F_COOLTRAINER_M
 	dw_const VictoryRoad2FSuperNerd2Text,   TEXT_VICTORYROAD2F_SUPER_NERD2
 	dw_const VictoryRoad2FSuperNerd3Text,   TEXT_VICTORYROAD2F_SUPER_NERD3
-	dw_const VictoryRoad2FMoltresText,      TEXT_VICTORYROAD2F_MOLTRES
-	dw_const PickUpItemText,                TEXT_VICTORYROAD2F_TM_SUBMISSION
-	dw_const PickUpItemText,                TEXT_VICTORYROAD2F_FULL_HEAL
-	dw_const PickUpItemText,                TEXT_VICTORYROAD2F_TM_MEGA_KICK
-	dw_const PickUpItemText,                TEXT_VICTORYROAD2F_GUARD_SPEC
+	; dw_const VictoryRoad2FMoltresText,      TEXT_VICTORYROAD2F_MOLTRES
+	; dw_const PickUpItemText,                TEXT_VICTORYROAD2F_TM_SUBMISSION
+	; dw_const PickUpItemText,                TEXT_VICTORYROAD2F_FULL_HEAL
+	; dw_const PickUpItemText,                TEXT_VICTORYROAD2F_TM_MEGA_KICK
+	; dw_const PickUpItemText,                TEXT_VICTORYROAD2F_GUARD_SPEC
 	dw_const BoulderText,                   TEXT_VICTORYROAD2F_BOULDER1
 	dw_const BoulderText,                   TEXT_VICTORYROAD2F_BOULDER2
 	dw_const BoulderText,                   TEXT_VICTORYROAD2F_BOULDER3
