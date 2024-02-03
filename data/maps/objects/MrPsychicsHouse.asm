@@ -1,5 +1,5 @@
 	object_const_def
-	const MRPSYCHICSHOUSE_MR_PSYCHIC
+	const_export MRPSYCHICSHOUSE_MR_PSYCHIC
 
 MrPsychicsHouse_Object:
 	db $a ; border block
@@ -11,6 +11,6 @@ MrPsychicsHouse_Object:
 	def_bg_events
 
 	def_object_events
-	; object_event  5,  3, SPRITE_FISHING_GURU, STAY, LEFT, TEXT_MRPSYCHICSHOUSE_MR_PSYCHIC
+	object_event  5,  3, SPRITE_FISHING_GURU, STAY, LEFT, TEXT_MRPSYCHICSHOUSE_MR_PSYCHIC
 
 	def_warps_to MR_PSYCHICS_HOUSE

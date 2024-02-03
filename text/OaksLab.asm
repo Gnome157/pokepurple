@@ -28,19 +28,27 @@ _OaksLabThoseArePokeBallsText::
 _OaksLabYouWantCharmanderText::
 	text "So! You want the"
 	line "fire #MON,"
-	cont "MISSINGNO.?"
+<<<<<<< HEAD
+	cont "HITOKAGE?"
+=======
+	cont "CHARMANDER?"
+>>>>>>> parent of 24fafef4 (Difficulty)
 	done
 
 _OaksLabYouWantSquirtleText::
 	text "So! You want the"
 	line "water #MON,"
-	cont "YADORAN?"
+<<<<<<< HEAD
+	cont "ZENIGAME?"
+=======
+	cont "SQUIRTLE?"
+>>>>>>> parent of 24fafef4 (Difficulty)
 	done
 
 _OaksLabYouWantBulbasaurText::
 	text "So! You want the"
 	line "plant #MON,"
-	cont "ROUGELA?"
+	cont "BULBASAUR?"
 	done
 
 _OaksLabMonEnergeticText::

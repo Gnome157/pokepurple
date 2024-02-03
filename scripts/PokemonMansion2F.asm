@@ -1,5 +1,5 @@
 PokemonMansion2F_Script:
-	call Mansion2Script_51fee
+	call Mansion2CheckReplaceSwitchDoorBlocks
 	call EnableAutoTextBoxDrawing
 	ld hl, Mansion2TrainerHeaders
 	ld de, PokemonMansion2F_ScriptPointers
@@ -8,36 +8,36 @@ PokemonMansion2F_Script:
 	ld [wPokemonMansion2FCurScript], a
 	ret
 
-Mansion2Script_51fee:
+Mansion2CheckReplaceSwitchDoorBlocks:
 	ld hl, wCurrentMapScriptFlags
 	bit 5, [hl]
 	res 5, [hl]
 	ret z
 	CheckEvent EVENT_MANSION_SWITCH_ON
-	jr nz, .asm_52016
+	jr nz, .switchTurnedOn
 	ld a, $e
 	lb bc, 2, 4
-	call Mansion2Script_5202f
+	call Mansion2ReplaceBlock
 	ld a, $54
 	lb bc, 4, 9
-	call Mansion2Script_5202f
+	call Mansion2ReplaceBlock
 	ld a, $5f
 	lb bc, 11, 3
-	call Mansion2Script_5202f
+	call Mansion2ReplaceBlock
 	ret
-.asm_52016
+.switchTurnedOn
 	ld a, $5f
 	lb bc, 2, 4
-	call Mansion2Script_5202f
+	call Mansion2ReplaceBlock
 	ld a, $e
 	lb bc, 4, 9
-	call Mansion2Script_5202f
+	call Mansion2ReplaceBlock
 	ld a, $e
 	lb bc, 11, 3
-	call Mansion2Script_5202f
+	call Mansion2ReplaceBlock
 	ret
 
-Mansion2Script_5202f:
+Mansion2ReplaceBlock:
 	ld [wNewTileBlockID], a
 	predef_jump ReplaceTileBlock
 
@@ -60,7 +60,7 @@ PokemonMansion2F_ScriptPointers:
 PokemonMansion2F_TextPointers:
 	def_text_pointers
 	dw_const PokemonMansion2FSuperNerdText, TEXT_POKEMONMANSION2F_SUPER_NERD
-	; dw_const PickUpItemText,                TEXT_POKEMONMANSION2F_CALCIUM
+	dw_const PickUpItemText,                TEXT_POKEMONMANSION2F_CALCIUM
 	dw_const PokemonMansion2FDiary1Text,    TEXT_POKEMONMANSION2F_DIARY1
 	dw_const PokemonMansion2FDiary2Text,    TEXT_POKEMONMANSION2F_DIARY2
 	dw_const PokemonMansion2FSwitchText,    TEXT_POKEMONMANSION2F_SWITCH

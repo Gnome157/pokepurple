@@ -3,14 +3,14 @@ SeaRoutesWildMons:
 	end_grass_wildmons
 
 	def_water_wildmons 5 ; encounter rate
-	db 1, PSYDUCK
-	db 1, POLIWAG
-	db 1, STARYU
-	db 1, KRABBY
-	db 1, SLOWPOKE
-	db 1, TENTACOOL
-	db 1, HORSEA
-	db 1, SEEL
-	db 1, SHELLDER
-	db 1, LAPRAS
+	db  5, TENTACOOL
+	db 10, TENTACOOL
+	db 15, TENTACOOL
+	db  5, TENTACOOL
+	db 10, TENTACOOL
+	db 15, TENTACOOL
+	db 20, TENTACOOL
+	db 30, TENTACOOL
+	db 35, TENTACOOL
+	db 40, TENTACOOL
 	end_water_wildmons

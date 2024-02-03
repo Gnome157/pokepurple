@@ -1,11 +1,11 @@
 	object_const_def
-	const ROUTE16_BIKER1
-	const ROUTE16_BIKER2
-	const ROUTE16_BIKER3
-	const ROUTE16_BIKER4
-	const ROUTE16_BIKER5
-	const ROUTE16_BIKER6
-	const ROUTE16_SNORLAX
+	const_export ROUTE16_BIKER1
+	const_export ROUTE16_BIKER2
+	const_export ROUTE16_BIKER3
+	const_export ROUTE16_BIKER4
+	const_export ROUTE16_BIKER5
+	const_export ROUTE16_BIKER6
+	const_export ROUTE16_SNORLAX
 
 Route16_Object:
 	db $f ; border block
@@ -32,6 +32,6 @@ Route16_Object:
 	object_event  9, 11, SPRITE_BIKER, STAY, LEFT, TEXT_ROUTE16_BIKER4, OPP_BIKER, 6
 	object_event  6, 10, SPRITE_BIKER, STAY, RIGHT, TEXT_ROUTE16_BIKER5, OPP_CUE_BALL, 3
 	object_event  3, 12, SPRITE_BIKER, STAY, RIGHT, TEXT_ROUTE16_BIKER6, OPP_BIKER, 7
-	; object_event 26, 10, SPRITE_SNORLAX, STAY, DOWN, TEXT_ROUTE16_SNORLAX
+	object_event 26, 10, SPRITE_SNORLAX, STAY, DOWN, TEXT_ROUTE16_SNORLAX
 
 	def_warps_to ROUTE_16

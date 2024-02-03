@@ -142,10 +142,6 @@ LoadSAVIgnoreBadCheckSum:
 
 SaveSAV:
 	farcall PrintSaveScreenText
-	ld hl, WouldYouLikeToSaveText
-	call SaveSAVConfirm
-	and a   ;|0 = Yes|1 = No|
-	ret nz
 	ld a, [wSaveFileStatus]
 	dec a
 	jr z, .save
@@ -161,20 +157,13 @@ SaveSAV:
 	lb bc, 4, 18
 	call ClearScreenArea
 	hlcoord 1, 14
-	ld de, NowSavingString
-	call PlaceString
-	ld c, 120
-	call DelayFrames
 	ld hl, GameSavedText
 	call PrintText
 	ld a, SFX_SAVE
 	call PlaySoundWaitForCurrent
 	call WaitForSoundToFinish
-	ld c, 30
+	ld c, 10
 	jp DelayFrames
-
-NowSavingString:
-	db "Now saving...@"
 
 SaveSAVConfirm:
 	call PrintText
@@ -185,10 +174,6 @@ SaveSAVConfirm:
 	call DisplayTextBoxID ; yes/no menu
 	ld a, [wCurrentMenuItem]
 	ret
-
-WouldYouLikeToSaveText:
-	text_far _WouldYouLikeToSaveText
-	text_end
 
 GameSavedText:
 	text_far _GameSavedText
@@ -372,7 +357,7 @@ ChangeBox::
 	call GetBoxSRAMLocation
 	ld de, wBoxDataStart
 	call CopyBoxToOrFromSRAM ; copy new box from SRAM to WRAM
-	ld hl, wMapTextPtr
+	ld hl, wCurMapTextPtr
 	ld de, wChangeBoxSavedMapTextPointer
 	ld a, [hli]
 	ld [de], a
@@ -705,7 +690,7 @@ ClearSAV:
 
 PadSRAM_FF:
 	ld [MBC1SRamBank], a
-	ld hl, SRAM_Begin
-	ld bc, SRAM_End - SRAM_Begin
+	ld hl, STARTOF(SRAM)
+	ld bc, SIZEOF(SRAM)
 	ld a, $ff
 	jp FillMemory

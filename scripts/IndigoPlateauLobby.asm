@@ -21,7 +21,6 @@ IndigoPlateauLobby_TextPointers:
 	dw_const IndigoPlateauLobbyCooltrainerFText,     TEXT_INDIGOPLATEAULOBBY_COOLTRAINER_F
 	dw_const IndigoPlateauLobbyClerkText,            TEXT_INDIGOPLATEAULOBBY_CLERK
 	dw_const IndigoPlateauLobbyLinkReceptionistText, TEXT_INDIGOPLATEAULOBBY_LINK_RECEPTIONIST
-	dw_const CeladonMart1FTraderText,	    TEXT_CELADONMART1F_TRADER
 
 IndigoPlateauLobbyNurseText:
 	script_pokecenter_nurse
@@ -36,10 +35,3 @@ IndigoPlateauLobbyCooltrainerFText:
 
 IndigoPlateauLobbyLinkReceptionistText:
 	script_cable_club_receptionist
-
-CeladonMart1FTraderText:
-	text_asm
-	ld a, TRADE_WITH_SELF
-	ld [wWhichTrade], a
-	predef DoInGameTradeDialogue
-	jp TextScriptEnd

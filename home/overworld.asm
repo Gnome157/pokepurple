@@ -104,7 +104,7 @@ OverworldLoopLessDelay::
 	bit 0, a
 	jr nz, .checkForOpponent
 	lda_coord 8, 9
-	ld [wTilePlayerStandingOn], a ; unused?
+	ld [wTilePlayerStandingOn], a ; checked when using Surf for forbidden tile pairs
 	call DisplayTextID ; display either the start menu or the NPC/sign text
 	ld a, [wEnteringCableClub]
 	and a
@@ -283,7 +283,22 @@ OverworldLoopLessDelay::
 	bit 6, a ; jumping a ledge?
 	jr nz, .normalPlayerSpriteAdvancement
 	call DoBikeSpeedup
+	call DoBikeSpeedup
+	call DoBikeSpeedup
+	jr .notRunning
 .normalPlayerSpriteAdvancement
+	; surf at 2x walking speed
+	ld a, [wWalkBikeSurfState]
+	cp $02
+	jr z, .surfFaster
+	; Holding B makes you run at 2x walking speed
+	ld a, [hJoyHeld]
+	and B_BUTTON
+	jr z, .notRunning
+.surfFaster
+	call DoBikeSpeedup
+.notRunning
+	;original .normalPlayerSpriteAdvancement continues here
 	call AdvancePlayerSprite
 	ld a, [wWalkCounter]
 	and a
@@ -551,6 +566,8 @@ CheckMapConnections::
 	cp $ff
 	jr nz, .checkEastMap
 	ld a, [wWestConnectedMap]
+	cp $ff
+	jr z, .checkEastMap
 	ld [wCurMap], a
 	ld a, [wWestConnectedMapXAlignment] ; new X coordinate upon entering west map
 	ld [wXCoord], a
@@ -588,6 +605,8 @@ CheckMapConnections::
 	cp b
 	jr nz, .checkNorthMap
 	ld a, [wEastConnectedMap]
+	cp $ff
+	jr z, .checkNorthMap
 	ld [wCurMap], a
 	ld a, [wEastConnectedMapXAlignment] ; new X coordinate upon entering east map
 	ld [wXCoord], a
@@ -624,6 +643,8 @@ CheckMapConnections::
 	cp $ff
 	jr nz, .checkSouthMap
 	ld a, [wNorthConnectedMap]
+	cp $ff
+	jr z, .checkSouthMap
 	ld [wCurMap], a
 	ld a, [wNorthConnectedMapYAlignment] ; new Y coordinate upon entering north map
 	ld [wYCoord], a
@@ -652,6 +673,8 @@ CheckMapConnections::
 	cp b
 	jr nz, .didNotEnterConnectedMap
 	ld a, [wSouthConnectedMap]
+	cp $ff
+	jr z, .didNotEnterConnectedMap
 	ld [wCurMap], a
 	ld a, [wSouthConnectedMapYAlignment] ; new Y coordinate upon entering south map
 	ld [wYCoord], a
@@ -910,9 +933,9 @@ LoadTileBlockMap::
 	add hl, bc
 	ld c, MAP_BORDER
 	add hl, bc ; this puts us past the (west) border
-	ld a, [wMapDataPtr] ; tile map pointer
+	ld a, [wCurMapDataPtr] ; tile map pointer
 	ld e, a
-	ld a, [wMapDataPtr + 1]
+	ld a, [wCurMapDataPtr + 1]
 	ld d, a ; de = tile map pointer
 	ld a, [wCurMapHeight]
 	ld b, a
@@ -1869,7 +1892,7 @@ JoypadOverworld::
 ; if done simulating button presses
 .doneSimulating
 	xor a
-	ld [wWastedByteCD3A], a
+	ld [wUnusedCD3A], a
 	ld [wSimulatedJoypadStatesIndex], a
 	ld [wSimulatedJoypadStatesEnd], a
 	ld [wJoyIgnore], a
@@ -1966,7 +1989,7 @@ RunMapScript::
 	call RunNPCMovementScript
 	ld a, [wCurMap] ; current map number
 	call SwitchToMapRomBank ; change to the ROM bank the map's data is in
-	ld hl, wMapScriptPtr
+	ld hl, wCurMapScriptPtr
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
@@ -2035,9 +2058,8 @@ LoadMapHeader::
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a ; hl = base of map header
-; copy the first 10 bytes (the fixed area) of the map data to D367-D370
-	ld de, wCurMapTileset
-	ld c, $0a
+	ld de, wCurMapHeader
+	ld c, wCurMapHeaderEnd - wCurMapHeader
 .copyFixedHeaderLoop
 	ld a, [hli]
 	ld [de], a
@@ -2051,25 +2073,25 @@ LoadMapHeader::
 	ld [wWestConnectedMap], a
 	ld [wEastConnectedMap], a
 ; copy connection data (if any) to WRAM
-	ld a, [wMapConnections]
+	ld a, [wCurMapConnections]
 	ld b, a
 .checkNorth
-	bit 3, b
+	bit NORTH_F, b
 	jr z, .checkSouth
 	ld de, wNorthConnectionHeader
 	call CopyMapConnectionHeader
 .checkSouth
-	bit 2, b
+	bit SOUTH_F, b
 	jr z, .checkWest
 	ld de, wSouthConnectionHeader
 	call CopyMapConnectionHeader
 .checkWest
-	bit 1, b
+	bit WEST_F, b
 	jr z, .checkEast
 	ld de, wWestConnectionHeader
 	call CopyMapConnectionHeader
 .checkEast
-	bit 0, b
+	bit EAST_F, b
 	jr z, .getObjectDataPointer
 	ld de, wEastConnectionHeader
 	call CopyMapConnectionHeader

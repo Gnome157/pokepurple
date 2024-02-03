@@ -1,7 +1,7 @@
 	object_const_def
-	const CERULEANCAVE1F_FULL_RESTORE
-	const CERULEANCAVE1F_MAX_ELIXER
-	const CERULEANCAVE1F_NUGGET
+	const_export CERULEANCAVE1F_FULL_RESTORE
+	const_export CERULEANCAVE1F_MAX_ELIXER
+	const_export CERULEANCAVE1F_NUGGET
 
 CeruleanCave1F_Object:
 	db $7d ; border block
@@ -20,5 +20,8 @@ CeruleanCave1F_Object:
 	def_bg_events
 
 	def_object_events
+	object_event  7, 13, SPRITE_POKE_BALL, STAY, NONE, TEXT_CERULEANCAVE1F_FULL_RESTORE, FULL_RESTORE
+	object_event 19,  3, SPRITE_POKE_BALL, STAY, NONE, TEXT_CERULEANCAVE1F_MAX_ELIXER, MAX_ELIXER
+	object_event  5,  0, SPRITE_POKE_BALL, STAY, NONE, TEXT_CERULEANCAVE1F_NUGGET, NUGGET
 
 	def_warps_to CERULEAN_CAVE_1F
