@@ -308,7 +308,7 @@ MainInBattleLoop:
 	and a
 	ret nz ; return if pokedoll was used to escape from battle
 	ld a, [wBattleMonStatus]
-	and (1 << FRZ) | SLP_MASK
+	and (1 << FRZ)
 	jr nz, .selectEnemyMove ; if so, jump
 	ld a, [wPlayerBattleStatus1]
 	and (1 << STORING_ENERGY) | (1 << USING_TRAPPING_MOVE) ; check player is using Bide or using a multi-turn attack like wrap
@@ -922,8 +922,19 @@ TrainerBattleVictory:
 .gymleader
 	ld a, [wTrainerClass]
 	cp RIVAL3 ; final battle against rival
+	jr z, .special1998
+	cp LORELEI
+	jr z, .special1998
+	cp BRUNO
+	jr z, .special1998
+	cp AGATHA
+	jr z, .special1998
+	cp LANCE
 	jr nz, .notrival
+.special1998
 	ld b, MUSIC_DEFEATED_GYM_LEADER
+	cp RIVAL3 ; final battle against rival
+	jr nz, .notrival
 	ld hl, wFlags_D733
 	set 1, [hl]
 .notrival
@@ -3341,6 +3352,7 @@ CheckPlayerStatusConditions:
 .WakeUp
 	ld hl, WokeUpText
 	call PrintText
+	jr z, .FrozenCheck
 .sleepDone
 	xor a
 	ld [wPlayerUsedMove], a
@@ -4165,7 +4177,28 @@ GetDamageVarsForPlayerAttack:
 	ret z ; return if move power is zero
 	ld a, [hl] ; a = [wPlayerMoveType]
 	cp SPECIAL ; types >= SPECIAL are all special
-	jr nc, .specialAttack
+        ld a, [wPlayerMoveNum]
+        ld b, a
+        jr nc, .isSpecialActuallyPhysical
+        jr .isPhysicalActuallySpecial
+.isSpecialActuallyPhysical
+        ld hl, SpecialToPhysicalMoves
+.specialPhysicalLoop
+        ld a, [hli]
+        cp b
+        jr z, .physicalAttack
+        cp $ff ; end of list
+        jr nz, .specialPhysicalLoop ; keep checking list
+        jr .specialAttack ; Not actually a physical move
+.isPhysicalActuallySpecial
+        ld hl, PhysicalToSpecialMoves
+.physicalSpecialLoop
+        ld a, [hli]
+        cp b
+        jr z, .specialAttack ; the physical move is actually special
+        cp $ff ; end of list
+        jr nz, .physicalSpecialLoop ; keep checking list
+        ; fallthrough
 .physicalAttack
 	ld hl, wEnemyMonDefense
 	ld a, [hli]
@@ -4278,7 +4311,28 @@ GetDamageVarsForEnemyAttack:
 	ret z ; return if move power is zero
 	ld a, [hl] ; a = [wEnemyMoveType]
 	cp SPECIAL ; types >= SPECIAL are all special
-	jr nc, .specialAttack
+        ld a, [wEnemyMoveNum]
+        ld b, a
+        jr nc, .isSpecialActuallyPhysical
+        jr .isPhysicalActuallySpecial
+.isSpecialActuallyPhysical
+        ld hl, SpecialToPhysicalMoves
+.specialPhysicalLoop
+        ld a, [hli]
+        cp b
+        jr z, .physicalAttack
+        cp $ff ; end of list
+        jr nz, .specialPhysicalLoop ; keep checking list
+        jr .specialAttack ; Not actually a physical move
+.isPhysicalActuallySpecial
+        ld hl, PhysicalToSpecialMoves
+.physicalSpecialLoop
+        ld a, [hli]
+        cp b
+        jr z, .specialAttack ; the physical move is actually special
+        cp $ff ; end of list
+        jr nz, .physicalSpecialLoop ; keep checking list
+        ; fallthrough
 .physicalAttack
 	ld hl, wBattleMonDefense
 	ld a, [hli]
@@ -4378,6 +4432,8 @@ GetDamageVarsForEnemyAttack:
 	and a
 	and a
 	ret
+
+INCLUDE "data/battle/physical_special_split.asm"
 
 ; get stat c of enemy mon
 ; c: stat to get (HP=1,Attack=2,Defense=3,Speed=4,Special=5)
@@ -5359,7 +5415,7 @@ MoveHitTest:
 	ld bc, wEnemyMonStatus
 	ldh a, [hWhoseTurn]
 	and a
-	jr z, .dreamEaterCheck
+	jr nz, .checkForDigOrFlyStatus
 ; enemy's turn
 	ld hl, wPlayerBattleStatus1
 	ld de, wEnemyMoveEffect
@@ -5371,21 +5427,22 @@ MoveHitTest:
 	ld a, [bc]
 	and SLP_MASK
 	jp z, .moveMissed
+	.checkForDigOrFlyStatus
+	bit INVULNERABLE, [hl]
+	jp nz, .moveMissed
 .swiftCheck
 	ld a, [de]
 	cp SWIFT_EFFECT
 	ret z ; Swift never misses (this was fixed from the Japanese versions)
 	call CheckTargetSubstitute ; substitute check (note that this overwrites a)
-	jr z, .checkForDigOrFlyStatus
+	jr z, .noSubstitute
 ; The fix for Swift broke this code. It's supposed to prevent HP draining moves from working on Substitutes.
 ; Since CheckTargetSubstitute overwrites a with either $00 or $01, it never works.
 	cp DRAIN_HP_EFFECT
 	jp z, .moveMissed
 	cp DREAM_EATER_EFFECT
 	jp z, .moveMissed
-.checkForDigOrFlyStatus
-	bit INVULNERABLE, [hl]
-	jp nz, .moveMissed
+.noSubstitute
 	ldh a, [hWhoseTurn]
 	and a
 	jr nz, .enemyTurn
@@ -5819,6 +5876,7 @@ CheckEnemyStatusConditions:
 .wokeUp
 	ld hl, WokeUpText
 	call PrintText
+	jr z, .checkIfFrozen
 .sleepDone
 	xor a
 	ld [wEnemyUsedMove], a

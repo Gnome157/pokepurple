@@ -16,29 +16,29 @@ _MtMoonPokecenterGentlemanText::
 	cont "news!"
 	done
 
-_MtMoonPokecenterMagikarpSalesmanIGotADealText::
+_MtMoonPokecenterMewSalesmanIGotADealText::
 	text "MAN: Hello, there!"
 	line "Have I got a deal"
 	cont "just for you!"
 
 	para "I'll let you have"
-	line "a swell MAGIKARP"
+	line "a swell MEW"
 	cont "for just ¥500!"
 	cont "What do you say?"
 	done
 
-_MtMoonPokecenterMagikarpSalesmanNoText::
+_MtMoonPokecenterMewSalesmanNoText::
 	text "No? I'm only"
 	line "doing this as a"
 	cont "favor to you!"
 	done
 
-_MtMoonPokecenterMagikarpSalesmanNoMoneyText::
+_MtMoonPokecenterMewSalesmanNoMoneyText::
 	text "You'll need more"
 	line "money than that!"
 	done
 
-_MtMoonPokecenterMagikarpSalesmanNoRefundsText::
+_MtMoonPokecenterMewSalesmanNoRefundsText::
 	text "MAN: Well, I don't"
 	line "give refunds!"
 	done
