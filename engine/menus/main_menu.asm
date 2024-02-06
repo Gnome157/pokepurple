@@ -398,7 +398,7 @@ PrintSaveScreenText:
 	call PrintPlayTime
 	ld a, $1
 	ldh [hAutoBGTransferEnabled], a
-	ld c, 30
+	ld c, 10
 	jp DelayFrames
 
 PrintNumBadges:
@@ -561,7 +561,6 @@ DisplayOptionMenu:
 	jp .eraseOldMenuCursor
 .cursorInBattleStyle
 	ld a, [wOptionsBattleStyleCursorX] ; battle style cursor X coordinate
-	xor $0b ; toggle between 1 and 10
 	ld [wOptionsBattleStyleCursorX], a
 	jp .eraseOldMenuCursor
 .pressedLeftInTextSpeed
@@ -599,7 +598,7 @@ BattleAnimationOptionText:
 
 BattleStyleOptionText:
 	db   "BATTLE STYLE"
-	next " SHIFT    SET@"
+	next "          SET@"
 
 OptionMenuCancelText:
 	db "CANCEL@"
@@ -634,7 +633,7 @@ SetOptionsFromCursorPositions:
 	set 6, d
 	jr .storeOptions
 .battleStyleShift
-	res 6, d
+	set 6, d
 .storeOptions
 	ld a, d
 	ld [wOptions], a
@@ -664,7 +663,7 @@ SetCursorPositionsFromOptions:
 	hlcoord 0, 8
 	call .placeUnfilledRightArrow
 	sla c
-	ld a, 1
+	ld a, 10
 	jr nc, .storeBattleStyleCursorX
 	ld a, 10
 .storeBattleStyleCursorX

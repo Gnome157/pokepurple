@@ -31,6 +31,7 @@ Route17_TextPointers:
 	dw_const Route17SignText,                TEXT_ROUTE17_SIGN
 	dw_const Route17NoticeSign2Text,         TEXT_ROUTE17_NOTICE_SIGN2
 	dw_const Route17CyclingRoadEndsSignText, TEXT_ROUTE17_CYCLING_ROAD_ENDS_SIGN
+	
 
 Route17TrainerHeaders:
 	def_trainers

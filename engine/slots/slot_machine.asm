@@ -297,14 +297,12 @@ SlotMachine_StopWheel1Early:
 	cp HIGH(SLOTSCHERRY)
 	jr nz, .stopWheel
 	ret
-; It looks like this was intended to make the wheel stop when a 7 symbol was
-; visible, but it has a bug and so the wheel stops randomly.
 .sevenAndBarMode
 	ld c, $3
 .loop
 	ld a, [hli]
 	cp HIGH(SLOTS7)
-	jr c, .stopWheel ; condition never true
+	jr z, .stopWheel
 	dec c
 	jr nz, .loop
 	ret
@@ -329,9 +327,13 @@ SlotMachine_StopWheel2Early:
 ; player's odds.
 .sevenAndBarMode
 	call SlotMachine_FindWheel1Wheel2Matches
+	ret nz
 	ld a, [de]
 	cp HIGH(SLOTSBAR) + 1
-	ret nc
+	jr c, .stopWheel
+	ld a, [wSlotMachineFlags]
+	bit 6, a
+	ret z
 .stopWheel
 	xor a
 	ld [wSlotMachineWheel2SlipCounter], a

@@ -72,10 +72,12 @@ ReadTrainerHeaderInfo::
 	jr z, .readPointer ; read end battle text
 	cp $a
 	jr nz, .done
+	pop de             ;BUGFIX: we pushed de onto the stack at the top, so we have to pop it off the stack to keep things symmetrical.
 	ld a, [hli]        ; read end battle text (2) but override the result afterwards (XXX why, bug?)
 	ld d, [hl]
 	ld e, a
-	jr .done
+	ret                ;BUGFIX: de contains the lose quote loaded from the trainer header. We are done here.  
+	;jr .done          ;BUGFIX: this would replace de (the value we just loaded) with the value on the top of the stack. That's not the behavior we want.
 .readPointer
 	ld a, [hli]
 	ld h, [hl]
@@ -145,11 +147,14 @@ ENDC
 .trainerEngaging
 	ld hl, wFlags_D733
 	set 3, [hl]
+	ld hl, wd730
+	res 0, [hl] ; Clear NPC movement flag to avoid softlock if this trainer doesn't move
+	res 3, [hl] ; Clear Trainer encounter reset flag
 	ld [wEmotionBubbleSpriteIndex], a
 	xor a ; EXCLAMATION_BUBBLE
 	ld [wWhichEmotionBubble], a
 	predef EmotionBubble
-	ld a, D_RIGHT | D_LEFT | D_UP | D_DOWN
+	ld a, $ff
 	ld [wJoyIgnore], a
 	xor a
 	ldh [hJoyHeld], a
@@ -161,8 +166,13 @@ ENDC
 ; display the before battle text after the enemy trainer has walked up to the player's sprite
 DisplayEnemyTrainerTextAndStartBattle::
 	ld a, [wd730]
+	and $8
+	jp nz, ResetButtonPressedAndMapScript ; Trainer Fly happened, abort this script
+	ld a, [wd730]
 	and $1
 	ret nz ; return if the enemy trainer hasn't finished walking to the player's sprite
+	farcall FaceEnemyTrainer
+	xor a
 	ld [wJoyIgnore], a
 	ld a, [wSpriteIndex]
 	ldh [hSpriteIndexOrTextID], a
@@ -222,7 +232,12 @@ ResetButtonPressedAndMapScript::
 	ldh [hJoyHeld], a
 	ldh [hJoyPressed], a
 	ldh [hJoyReleased], a
-	ld [wCurMapScript], a               ; reset battle status
+	ld [wCurMapScript], a        ; reset battle status
+	ld hl, wd730
+	res 0, [hl]                  ; Clear NPC movement flag to avoid potential softlocks
+	set 3, [hl]                  ; Set Trainer encounter reset flag to avoid Mew Glitch
+	ld hl, wFlags_0xcd60
+	res 0, [hl]                  ; player is no longer engaged by any trainer
 	ret
 
 ; calls TrainerWalkUpToPlayer
@@ -351,7 +366,7 @@ PrintEndBattleText::
 	ldh [hLoadedROMBank], a
 	ld [MBC1RomBank], a
 	push hl
-	farcall SaveTrainerName
+	call SaveTrainerName
 	ld hl, TrainerEndBattleText
 	call PrintText
 	pop hl
@@ -360,6 +375,17 @@ PrintEndBattleText::
 	ld [MBC1RomBank], a
 	farcall FreezeEnemyTrainerSprite
 	jp WaitForSoundToFinish
+
+SaveTrainerName::
+	ld hl, wTrainerName
+	ld de, wcd6d
+.CopyCharacter
+	ld a, [hli]
+	ld [de], a
+	inc de
+	cp "@"
+	jr nz, .CopyCharacter
+	ret
 
 GetSavedEndBattleTextPointer::
 	ld a, [wBattleResult]
