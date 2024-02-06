@@ -56,9 +56,9 @@ SleepEffect:
 	and a
 	jr nz, .didntAffect
 .setSleepCounter
-; set target's sleep counter to a random number between 1 and 255
+; set target's sleep counter to a random number between 1 and 7
 	call BattleRandom
-	and $255
+	and $7
 	jr z, .setSleepCounter
 	ld [de], a
 	call PlayCurrentMoveAnimation2

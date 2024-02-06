@@ -347,7 +347,8 @@ StartMenu_Item::
 	xor a
 	ld [hli], a ; current menu item ID
 	inc hl
-	inc a, 2
+	inc a
+	inc a
 	ld [hli], a ; max menu item ID
 	ld a, A_BUTTON | B_BUTTON
 	ld [hli], a ; menu watched keys
