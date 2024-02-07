@@ -21,7 +21,7 @@ SafariZoneGateDefaultScript:
 	jr c, .playerInfrontOfClerk
 	ld hl, .exitCoords
 	call ArePlayerCoordsInArray
-	jr c, .SafariZoneEntranceScript5
+	ld a, SCRIPT_SAFARIZONEGATE_LEAVING_SAFARI
 	ret
 .playerInfrontOfClerk
 	ld a, TEXT_SAFARIZONEGATE_SAFARI_ZONE_WORKER1_1

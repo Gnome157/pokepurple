@@ -1168,8 +1168,6 @@ LinkBattleLostText:
 	text_far _LinkBattleLostText
 	text_end
 
-; slides pic of fainted mon downwards until it disappears
-; bug: when this is called, [hAutoBGTransferEnabled] is non-zero, so there is screen tearing
 SlideDownFaintedMonPic:
 	ld a, [wd730]
 	push af
@@ -1223,10 +1221,6 @@ SlideDownFaintedMonPic:
 SevenSpacesText:
 	db "       @"
 
-; slides the player or enemy trainer off screen
-; a is the number of tiles to slide it horizontally (always 9 for the player trainer or 8 for the enemy trainer)
-; if a is 8, the slide is to the right, else it is to the left
-; bug: when this is called, [hAutoBGTransferEnabled] is non-zero, so there is screen tearing
 SlideTrainerPicOffScreen:
 	ldh [hSlideAmount], a
 	ld c, a
@@ -3803,7 +3797,7 @@ PrintMoveName:
 _PrintMoveName:
 	text_far _MoveNameText
 	text_asm
-	ld hl, ExclamationPoint
+	ld hl, ExclamationPointText
 	ret
 
 ExclamationPointText:

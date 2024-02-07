@@ -7,50 +7,50 @@ NoThanksText:
 	db "NO THANKS@"
 
 PrizeMenuMon1Entries:
-	db ABRA
-	db CLEFAIRY
+	db DROWZEE
+	db MR_MIME
 IF DEF(_RED)
-	db NIDORINA
+	db ABRA
 ENDC
 IF DEF(_BLUE)
-	db NIDORINO
+	db ABRA
 ENDC
 	db "@"
 
 PrizeMenuMon1Cost:
 IF DEF(_RED)
-	bcd2 180
-	bcd2 500
+	bcd2 200
+	bcd2 250
 ENDC
 IF DEF(_BLUE)
-	bcd2 120
-	bcd2 750
+	bcd2 200
+	bcd2 250
 ENDC
-	bcd2 1200
+	bcd2 500
 	db "@"
 
 PrizeMenuMon2Entries:
 IF DEF(_RED)
 	db DRATINI
-	db SCYTHER
+	db DITTO
 ENDC
 IF DEF(_BLUE)
 	db PINSIR
-	db DRATINI
+	db DITTO
 ENDC
-	db PORYGON
+	db LAPRAS
 	db "@"
 
 PrizeMenuMon2Cost:
 IF DEF(_RED)
-	bcd2 2800
-	bcd2 5500
+	bcd2 9999
+	bcd2 9999
 	bcd2 9999
 ENDC
 IF DEF(_BLUE)
-	bcd2 2500
-	bcd2 4600
-	bcd2 6500
+	bcd2 9999
+	bcd2 9999
+	bcd2 9999
 ENDC
 	db "@"
 
@@ -61,7 +61,7 @@ PrizeMenuTMsEntries:
 	db "@"
 
 PrizeMenuTMsCost:
-	bcd2 3300
-	bcd2 5500
-	bcd2 7700
+	bcd2 5000
+	bcd2 5000
+	bcd2 5000
 	db "@"

@@ -1699,8 +1699,9 @@ _OakSpeechText2B::
 	prompt
 
 _IntroducePlayerText::
-	text "First, what is"
-	line "your name?"
+	text "First, what did"
+	line "you say your"
+	cont "name was?"
 	prompt
 
 _IntroduceRivalText::
@@ -1709,8 +1710,8 @@ _IntroduceRivalText::
 	cont "your rival since"
 	cont "you were a baby."
 
-	para "...Erm, what is"
-	line "his name again?"
+	para "What do you call"
+	line "him by again?"
 	prompt
 
 _OakSpeechText3::
@@ -1735,14 +1736,14 @@ _DoYouWantToNicknameText::
 	done
 
 _YourNameIsText::
-	text "Right! So your"
-	line "name is <PLAYER>!"
+	text "I remember now!"
+	line "You are <PLAYER>!"
 	prompt
 
 _HisNameIsText::
-	text "That's right! I"
-	line "remember now! His"
-	cont "name is <RIVAL>!"
+	text "That's right!"
+	line "His nickname"
+	cont "is <RIVAL>!"
 	prompt
 
 _WillBeTradedText::

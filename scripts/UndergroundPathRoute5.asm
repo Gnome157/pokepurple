@@ -8,7 +8,7 @@ UndergroundPathEntranceRoute5_TextScriptEndingText:
 
 UndergroundPathRoute5_TextPointers:
 	def_text_pointers
-	dw_const UndergroundPathRoute5LittleGirlText, TEXT_UNDERGROUNDPATHROUTE5_LITTLE_GIRL
+	; dw_const UndergroundPathRoute5LittleGirlText, TEXT_UNDERGROUNDPATHROUTE5_LITTLE_GIRL
 
 UndergroundPathRoute5LittleGirlText:
 	text_asm
