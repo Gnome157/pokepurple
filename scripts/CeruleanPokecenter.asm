@@ -9,9 +9,6 @@ CeruleanPokecenter_TextPointers:
 	dw_const CeruleanPokecenterGentlemanText,        TEXT_CERULEANPOKECENTER_GENTLEMAN
 	dw_const CeruleanPokecenterLinkReceptionistText, TEXT_CERULEANPOKECENTER_LINK_RECEPTIONIST
 
-CeruleanPokecenterLinkReceptionistText:
-	script_cable_club_receptionist
-
 CeruleanPokecenterNurseText:
 	script_pokecenter_nurse
 
@@ -22,3 +19,6 @@ CeruleanPokecenterSuperNerdText:
 CeruleanPokecenterGentlemanText:
 	text_far _CeruleanPokecenterGentlemanText
 	text_end
+
+CeruleanPokecenterLinkReceptionistText:
+	script_cable_club_receptionist

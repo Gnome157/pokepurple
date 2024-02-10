@@ -267,6 +267,11 @@ SECTION "Text 11", ROMX
 
 INCLUDE "data/text/text_7.asm"
 
+INCLUDE "text/move_deleter.asm"
+
+INCLUDE "text/move_relearner.asm"
+
+INCLUDE "text/VermilionTradeHouse.asm"
 
 SECTION "Pokédex Text", ROMX
 

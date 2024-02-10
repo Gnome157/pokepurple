@@ -146,6 +146,8 @@ INCLUDE "data/maps/objects/CeruleanTrashedHouse.asm"
 INCLUDE "data/maps/headers/CeruleanTradeHouse.asm"
 INCLUDE "scripts/CeruleanTradeHouse.asm"
 INCLUDE "data/maps/objects/CeruleanTradeHouse.asm"
+INCLUDE "scripts/move_deleter.asm"
+INCLUDE "scripts/move_relearner.asm"
 
 INCLUDE "data/maps/headers/BikeShop.asm"
 INCLUDE "scripts/BikeShop.asm"

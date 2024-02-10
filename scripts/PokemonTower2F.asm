@@ -66,6 +66,8 @@ PokemonTower2FRivalEncounterEventCoords:
 PokemonTower2FDefeatedRivalScript:
 	ld a, [wIsInBattle]
 	cp $ff
+	xor a
+	ld [wIsTrainerBattle], a
 	jp z, PokemonTower2FResetRivalEncounter
 	ld a, D_RIGHT | D_LEFT | D_UP | D_DOWN
 	ld [wJoyIgnore], a
@@ -167,6 +169,8 @@ PokemonTower2FRivalText:
 .done
 	ld [wTrainerNo], a
 
+	ld a, 1
+	ld [wIsTrainerBattle], a
 	ld a, SCRIPT_POKEMONTOWER2F_DEFEATED_RIVAL
 	ld [wPokemonTower2FCurScript], a
 	ld [wCurMapScript], a
