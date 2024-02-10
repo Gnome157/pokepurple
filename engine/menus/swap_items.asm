@@ -320,6 +320,7 @@ ItemSortList::
 	db THUNDER_STONE
 	db WATER_STONE
 	db MOON_STONE
+	db SUN_STONE
 	; Money
 	db COIN_CASE
 	db COIN

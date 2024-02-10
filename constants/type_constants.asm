@@ -11,6 +11,8 @@ DEF PHYSICAL EQU const_value
 	const BIRD         ; $06
 	const BUG          ; $07
 	const GHOST        ; $08
+	const DARK         ; $1B
+	const STEEL        ; $1C
 
 DEF UNUSED_TYPES EQU const_value
 	const_next 20
