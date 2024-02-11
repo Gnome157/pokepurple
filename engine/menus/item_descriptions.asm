@@ -97,7 +97,7 @@ ItemDescriptionPointers:
 	text_end
 	text_far _SecretKeyDescription
 	text_end
-	text_far _UnusedItemDescription
+	text_far _SunStoneDescription
 	text_end
 	text_far _BikeVoucherDescription
 	text_end

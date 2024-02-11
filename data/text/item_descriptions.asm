@@ -33,6 +33,7 @@ _FireStoneDescription::
 _ThunderStoneDescription::
 _WaterStoneDescription::
 _LeafStoneDescription::
+_SunStoneDescription::
 	text "Evolves certain"
 	next "kinds of #MON."
 	prompt

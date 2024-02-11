@@ -849,7 +849,7 @@ TradeforText:
 	text_end
 
 Trade_ShowAnimation:
-	ld [wAnimationID], a
+	ld [wAltAnimationID], a
 	xor a
 	ld [wAnimationType], a
 	predef_jump MoveAnimation
