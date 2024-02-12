@@ -4,6 +4,7 @@ RedsHouse1F_Script:
 RedsHouse1F_TextPointers:
 	def_text_pointers
 	dw_const RedsHouse1FMomText, TEXT_REDSHOUSE1F_MOM
+	dw_const RedsHouse1FDadText, TEXT_REDSHOUSE1F_DAD
 	dw_const RedsHouse1FTVText,  TEXT_REDSHOUSE1F_TV
 
 RedsHouse1FMomText:
@@ -67,4 +68,13 @@ RedsHouse1FTVText:
 
 .WrongSideText:
 	text_far _RedsHouse1FTVWrongSideText
+	text_end
+
+RedsHouse1FDadText:
+	text_asm
+	ld hl, .Text
+	call PrintText
+	jp TextScriptEnd
+.Text:
+	text_far _RedsHouse1FDadText
 	text_end

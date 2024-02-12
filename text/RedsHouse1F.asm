@@ -35,3 +35,8 @@ _RedsHouse1FTVStandByMeMovieText::
 _RedsHouse1FTVWrongSideText::
 	text "Oops, wrong side."
 	done
+
+_RedsHouse1FDadText::
+	text "DAD: Hey kiddo!"
+	line "Have fun on your"
+	cont "journey, ok?"

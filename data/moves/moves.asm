@@ -238,7 +238,7 @@ Moves:
 	move SWEET_SCENT,  EVASION_DOWN1_EFFECT,         0, NORMAL,       100, 20
 	move TRIPLE_KICK,  TRIPLE_KICK_EFFECT,          10, FIGHTING,      90, 10
 	move TWISTER,      FLINCH_SIDE_EFFECT1,         40, DRAGON,       100, 20
-	move VITAL_THROW,  VITAL_THROW_EFFECT,          70, FIGHTING,     100, 10
+	move VITAL_THROW,  NO_ADDITIONAL_EFFECT,        70, FIGHTING,     100, 10
 	move WHIRLPOOL,    TWO_TO_FIVE_ATTACKS_EFFECT,  35, WATER,         85, 15
 	move ZAP_CANNON,   PARALYZE_EFFECT,            120, ELECTRIC,      50,  5
 	move BEAT_UP,      BEAT_UP_EFFECT,               1, DARK,         100, 10

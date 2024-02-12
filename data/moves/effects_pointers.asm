@@ -87,4 +87,38 @@ MoveEffectPointerTable:
 	dw LeechSeedEffect           ; LEECH_SEED_EFFECT
 	dw SplashEffect              ; SPLASH_EFFECT
 	dw DisableEffect             ; DISABLE_EFFECT
+	dw AncientPowerEffect        ; ANCIENT_POWER_EFFECT
+	dw BatonPassEffect           ; BATON_PASS_EFFECT
+	dw BellyDrumEffect           ; BELLY_DRUM_EFFECT
+	dw Conversion2Effect         ; CONVERSION_2_EFFECT
+	dw CurseEffect               ; CURSE_EFFECT
+	dw DestinyBondEffect         ; DESTINY_BOND_EFFECT
+	dw EncoreEffect              ; ENCORE_EFFECT
+	dw EndureEffect              ; ENDURE_EFFECT
+	dw FalseSwipeEffect          ; FALSE_SWIPE_EFFECT
+	dw LowHPEffect               ; LOW_HP_EFFECT
+	dw ForesightEffect           ; FORESIGHT_EFFECT
+	dw FuryCutterEffect          ; FURY_CUTTER_EFFECT
+	dw FutureSightEffect         ; FUTURE_SIGHT_EFFECT
+	dw HealBellEffect            ; HEAL_BELL_EFFECT
+	dw MagnitudeEffect           ; MAGNITUDE_EFFECT
+	dw NoEscapeEffect            ; NO_ESCAPE_EFFECT
+	dw NeverMissEffect           ; NEVER_MISS_EFFECT
+	dw MirrorCoatEffect          ; MIRROR_COAT_EFFECT
+	dw NightmareEffect           ; NIGHTMARE_EFFECT
+	dw PainSplitEffect           ; PAIN_SPLIT_EFFECT
+	dw PerishSongEffect          ; PERISH_SONG_EFFECT
+	dw PresentEffect             ; PRESENT_EFFECT
+	dw ProtectEffect             ; PROTECT_EFFECT
+	dw PsychUpEffect             ; PSYCH_UP_EFFECT
+	dw RapidSpinEffect           ; RAPID_SPIN_EFFECT
+	dw SafeguardEffect           ; SAFEGUARD_EFFECT
+	dw SleepTalkEffect           ; SLEEP_TALK_EFFECT
+	dw SnoreEffect               ; SNORE_EFFECT
+	dw SpikesEffect              ; SPIKES_EFFECT
+	dw SpiteEffect               ; SPITE_EFFECT
+	dw SwaggerEffect             ; SWAGGER_EFFECT
+	dw TripleKickEffect          ; TRIPLE_KICK_EFFECT
+	dw BeatUpEffect              ; BEAT_UP_EFFECT
+	dw PursuitEffect             ; PURSUIT_EFFECT
 	assert_table_length NUM_MOVE_EFFECTS
