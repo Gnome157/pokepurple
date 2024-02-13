@@ -170,78 +170,78 @@
 	const SUPER_FANG   ; a2
 	const SLASH        ; a3
 	const SUBSTITUTE   ; a4
-	const AEROBLAST    ; a5
-	const ANCIENT_POWER; a6
-	const BATON_PASS   ; a7
-	const BELLY_DRUM   ; a8
-	const BONE_RUSH    ; a9
-	const CHARM        ; aa
-	const CONVERSION_2 ; ab
-	const COTTON_SPORE ; ac
-	const CROSS_CHOP   ; ad
-	const CURSE        ; ae
-	const DESTINY_BOND ; af
-	const DRAGON_BREATH; b0
-	const DYNAMIC_PUNCH; b1
-	const ENCORE       ; b2
-	const ENDURE       ; b3
-	const EXTREME_SPEED; b4
-	const FALSE_SWIPE  ; b5
-	const FLAIL        ; b6
-	const FLAME_WHEEL  ; b7
-	const FORESIGHT    ; b8
-	const FURY_CUTTER  ; b9
-	const FUTURE_SIGHT ; ba
-	const GIGA_DRAIN   ; bb
-	const HEAL_BELL    ; bc
-	const ICY_WIND     ; bd
-	const LOCK_ON      ; be
-	const MACH_PUNCH   ; bf
-	const MAGNITUDE    ; c0
-	const MEAN_LOOK    ; c1
-	const MEGAHORN     ; c2
-	const MIND_READER  ; c3
-	const MIRROR_COAT  ; c4
-	const MUD_SLAP     ; c5
-	const NIGHTMARE    ; c6
-	const OCTAZOOKA    ; c7
-	const OUTRAGE      ; c8
-	const PAIN_SPLIT   ; c9
-	const PERISH_SONG  ; ca
-	const POWDER_SNOW  ; cb
-	const PRESENT      ; cc
-	const PROTECT      ; cd
-	const PSYCH_UP     ; ce
-	const RAPID_SPIN   ; cf
-	const REVERSAL     ; d0
-	const ROCK_SMASH   ; d1
-	const ROLLOUT      ; d2
-	const SACRED_FIRE  ; d3
-	const SAFEGUARD    ; d4
-	const SCARY_FACE   ; d5
-	const SHADOW_BALL  ; d6
-	const SLEEP_TALK   ; d7
-	const SLUDGE_BOMB  ; d8
-	const SNORE        ; d9
-	const SPARK        ; da
-	const SPIDER_WEB   ; db
-	const SPIKES       ; dc
-	const SPITE        ; dd
-	const SWAGGER      ; de
-	const SWEET_KISS   ; df
-	const SWEET_SCENT  ; e0
-	const TRIPLE_KICK  ; e1
-	const TWISTER      ; e2
-	const VITAL_THROW  ; e3
-	const WHIRLPOOL    ; e4
-	const ZAP_CANNON   ; e5
-	const BEAT_UP      ; e6
-	const CRUNCH       ; e7
-	const FEINT_ATTACK ; e8
-	const IRON_TAIL    ; e9
-	const METAL_CLAW   ; ea
-	const PURSUIT      ; eb
-	const STEEL_WING   ; ec
+	; const AEROBLAST    ; a5
+	; const ANCIENT_POWER; a6
+	; const BATON_PASS   ; a7
+	; const BELLY_DRUM   ; a8
+	; const BONE_RUSH    ; a9
+	; const CHARM        ; aa
+	; const CONVERSION_2 ; ab
+	; const COTTON_SPORE ; ac
+	; const CROSS_CHOP   ; ad
+	; const CURSE        ; ae
+	; const DESTINY_BOND ; af
+	; const DRAGON_BREATH; b0
+	; const DYNAMIC_PUNCH; b1
+	; const ENCORE       ; b2
+	; const ENDURE       ; b3
+	; const EXTREME_SPEED; b4
+	; const FALSE_SWIPE  ; b5
+	; const FLAIL        ; b6
+	; const FLAME_WHEEL  ; b7
+	; const FORESIGHT    ; b8
+	; const FURY_CUTTER  ; b9
+	; const FUTURE_SIGHT ; ba
+	; const GIGA_DRAIN   ; bb
+	; const HEAL_BELL    ; bc
+	; const ICY_WIND     ; bd
+	; const LOCK_ON      ; be
+	; const MACH_PUNCH   ; bf
+	; const MAGNITUDE    ; c0
+	; const MEAN_LOOK    ; c1
+	; const MEGAHORN     ; c2
+	; const MIND_READER  ; c3
+	; const MIRROR_COAT  ; c4
+	; const MUD_SLAP     ; c5
+	; const NIGHTMARE    ; c6
+	; const OCTAZOOKA    ; c7
+	; const OUTRAGE      ; c8
+	; const PAIN_SPLIT   ; c9
+	; const PERISH_SONG  ; ca
+	; const POWDER_SNOW  ; cb
+	; const PRESENT      ; cc
+	; const PROTECT      ; cd
+	; const PSYCH_UP     ; ce
+	; const RAPID_SPIN   ; cf
+	; const REVERSAL     ; d0
+	; const ROCK_SMASH   ; d1
+	; const ROLLOUT      ; d2
+	; const SACRED_FIRE  ; d3
+	; const SAFEGUARD    ; d4
+	; const SCARY_FACE   ; d5
+	; const SHADOW_BALL  ; d6
+	; const SLEEP_TALK   ; d7
+	; const SLUDGE_BOMB  ; d8
+	; const SNORE        ; d9
+	; const SPARK        ; da
+	; const SPIDER_WEB   ; db
+	; const SPIKES       ; dc
+	; const SPITE        ; dd
+	; const SWAGGER      ; de
+	; const SWEET_KISS   ; df
+	; const SWEET_SCENT  ; e0
+	; const TRIPLE_KICK  ; e1
+	; const TWISTER      ; e2
+	; const VITAL_THROW  ; e3
+	; const WHIRLPOOL    ; e4
+	; const ZAP_CANNON   ; e5
+	; const BEAT_UP      ; e6
+	; const CRUNCH       ; e7
+	; const FEINT_ATTACK ; e8
+	; const IRON_TAIL    ; e9
+	; const METAL_CLAW   ; ea
+	; const PURSUIT      ; eb
+	; const STEEL_WING   ; ec
 	; const ; ed
 	; const ; ee
 	; const ; ef

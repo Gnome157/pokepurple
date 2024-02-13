@@ -91,4 +91,38 @@
 	const LEECH_SEED_EFFECT          ; $54
 	const SPLASH_EFFECT              ; $55
 	const DISABLE_EFFECT             ; $56
+	; const ANCIENT_POWER_EFFECT       ; $57
+	; const BATON_PASS_EFFECT          ; $58
+	; const BELLY_DRUM_EFFECT          ; $59
+	; const CONVERSION_2_EFFECT        ; $5A
+	; const CURSE_EFFECT               ; $5B
+	; const DESTINY_BOND_EFFECT        ; $5C
+	; const ENCORE_EFFECT              ; $5D
+	; const ENDURE_EFFECT              ; $5E
+	; const FALSE_SWIPE_EFFECT         ; $5F
+	; const LOW_HP_EFFECT              ; $60
+	; const FORESIGHT_EFFECT           ; $61
+	; const FURY_CUTTER_EFFECT         ; $62
+	; const FUTURE_SIGHT_EFFECT        ; $63
+	; const HEAL_BELL_EFFECT           ; $64
+	; const MAGNITUDE_EFFECT           ; $65
+	; const NO_ESCAPE_EFFECT           ; $66
+	; const NEVER_MISS_EFFECT          ; $67
+	; const MIRROR_COAT_EFFECT         ; $68
+	; const NIGHTMARE_EFFECT           ; $69
+	; const PAIN_SPLIT_EFFECT          ; $6A
+	; const PERISH_SONG_EFFECT         ; $6B
+	; const PRESENT_EFFECT             ; $6C
+	; const PROTECT_EFFECT             ; $6D
+	; const PSYCH_UP_EFFECT            ; $6E
+	; const RAPID_SPIN_EFFECT          ; $6F
+	; const SAFEGUARD_EFFECT           ; $70
+	; const SLEEP_TALK_EFFECT          ; $71
+	; const SNORE_EFFECT               ; $72
+	; const SPIKES_EFFECT              ; $73
+	; const SPITE_EFFECT               ; $74
+	; const SWAGGER_EFFECT             ; $75
+	; const TRIPLE_KICK_EFFECT         ; $76
+	; const BEAT_UP_EFFECT             ; $77
+	; const PURSUIT_EFFECT             ; $78
 DEF NUM_MOVE_EFFECTS EQU const_value - 1
