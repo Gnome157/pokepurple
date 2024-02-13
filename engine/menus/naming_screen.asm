@@ -427,6 +427,8 @@ PrintNamingText:
 	ld de, RivalsTextString
 	dec a
 	jr z, .notNickname
+	ld a, 0
+	ld [hPartyMonIndex], a
 	ld a, [wcf91]
 	ld [wMonPartySpriteSpecies], a
 	push af
