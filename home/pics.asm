@@ -26,22 +26,38 @@ UncompressMonSprite::
 	ld a, BANK(FossilKabutopsPic)
 	jr z, .GotBank
 	ld a, b
-	cp TANGELA + 1
+	cp IVYSAUR + 1
 	ld a, BANK("Pics 1")
 	jr c, .GotBank
 	ld a, b
-	cp MOLTRES + 1
+	cp STARYU + 1
 	ld a, BANK("Pics 2")
 	jr c, .GotBank
 	ld a, b
-	cp BEEDRILL + 2
+	cp HITMONLEE + 1
 	ld a, BANK("Pics 3")
 	jr c, .GotBank
 	ld a, b
-	cp STARMIE + 1
+	cp DODUO + 1
 	ld a, BANK("Pics 4")
 	jr c, .GotBank
+	ld a, b
+	cp OMANYTE + 1
 	ld a, BANK("Pics 5")
+	jr c, .GotBank
+	ld a, b
+	cp DODRIO + 1
+	ld a, BANK("Pics 6")
+	jr c, .GotBank
+	ld a, b
+	cp MUK + 1
+	ld a, BANK("Pics 7")
+	jr c, .GotBank
+	ld a, b
+	cp RAPIDASH + 1
+	ld a, BANK("Pics 8")
+	jr c, .GotBank
+	ld a, BANK("Pics 9")
 .GotBank
 	jp UncompressSpriteData
 

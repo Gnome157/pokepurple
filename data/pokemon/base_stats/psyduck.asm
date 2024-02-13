@@ -7,7 +7,7 @@
 	db 190 ; catch rate
 	db 80 ; base exp
 
-	INCBIN "gfx/pokemon/front/psyduck.pic", 0, 1 ; sprite dimensions
+	INCBIN "gfx/pokemon/psyduck/front_gold.pic", 0, 1 ; sprite dimensions
 	dw PsyduckPicFront, PsyduckPicBack
 
 	db SCRATCH, NO_MOVE, NO_MOVE, NO_MOVE ; level 1 learnset

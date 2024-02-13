@@ -291,7 +291,7 @@ RapidashPicFront::     INCBIN "gfx/pokemon/rapidash/front_gold.pic"
 PonytaPicBack::        INCBIN "gfx/pokemon/ponyta/back.pic"
 RapidashPicBack::      INCBIN "gfx/pokemon/rapidash/back.pic"
 
-SECTION "Pics 11", ROMX
+SECTION "Pics 9", ROMX
 
 RattataPicFront::      INCBIN "gfx/pokemon/rattata/front_gold.pic"
 RattataPicBack::       INCBIN "gfx/pokemon/rattata/back.pic"

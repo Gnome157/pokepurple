@@ -7,7 +7,7 @@
 	db 190 ; catch rate
 	db 97 ; base exp
 
-	INCBIN "gfx/pokemon/front/shellder.pic", 0, 1 ; sprite dimensions
+	INCBIN "gfx/pokemon/shellder/front_gold.pic", 0, 1 ; sprite dimensions
 	dw ShellderPicFront, ShellderPicBack
 
 	db TACKLE, WITHDRAW, NO_MOVE, NO_MOVE ; level 1 learnset
