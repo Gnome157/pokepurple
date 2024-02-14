@@ -40,3 +40,4 @@ _RedsHouse1FDadText::
 	text "DAD: Hey kiddo!"
 	line "Have fun on your"
 	cont "journey, ok?"
+	done
