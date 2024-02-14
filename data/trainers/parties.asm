@@ -277,11 +277,11 @@ BikerData:
 	; Finally, PokedexOrder lists 0 as the dex ID for every MissingNo.
 	; The result is that this data gets interpreted as the base stats
 	; for MissingNo: 0, 33, MUK, 0, 29, VOLTORB, VOLTORB, 0, ..., 28, GRIMER, GRIMER.
-	db 28, WEEZING, KOFFING, WEEZING, 0
-	db 33, MUK, 0
+	db 28, KOFFING, KOFFING, KOFFING, 0
+	db 33, GRIMER, 0
 	db 29, VOLTORB, VOLTORB, 0
-	db 29, WEEZING, MUK, 0
-	db 25, KOFFING, WEEZING, KOFFING, KOFFING, WEEZING, 0
+	db 29, KOFFING, GRIMER, 0
+	db 25, KOFFING, KOFFING, KOFFING, KOFFING, KOFFING, 0
 ; Route 14
 	db 26, KOFFING, KOFFING, GRIMER, KOFFING, 0
 	db 28, GRIMER, GRIMER, KOFFING, 0

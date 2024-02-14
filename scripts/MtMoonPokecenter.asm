@@ -37,7 +37,7 @@ MtMoonPokecenterMewSalesmanText:
 	jp nz, .choseNo
 	ldh [hMoney], a
 	ldh [hMoney + 2], a
-	ld a, $5
+	ld a, $50
 	ldh [hMoney + 1], a
 	call HasEnoughMoney
 	jr nc, .enoughMoney

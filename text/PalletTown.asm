@@ -8,10 +8,10 @@ _PalletTownOakItsUnsafeText::
 	line "Wild #MON live"
 	cont "in tall grass!"
 
-	para "You need your own"
-	line "#MON for your"
-	cont "protection."
-	cont "I know!"
+	para "If you wanted a"
+	line "#MON, you"
+	cont "should have"
+	cont "asked me!"
 
 	para "Here, come with"
 	line "me!"
@@ -19,7 +19,7 @@ _PalletTownOakItsUnsafeText::
 
 _PalletTownGirlText::
 	text "I'm raising"
-	line "#MON too!"
+	line "#MON!"
 
 	para "When they get"
 	line "strong, they can"

@@ -23,7 +23,7 @@ _MtMoonPokecenterMewSalesmanIGotADealText::
 
 	para "I'll let you have"
 	line "a swell MEW"
-	cont "for just ¥500!"
+	cont "for just ¥5000!"
 	cont "What do you say?"
 	done
 
