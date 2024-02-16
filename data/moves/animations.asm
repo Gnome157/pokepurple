@@ -224,7 +224,7 @@ AttackAnimationPointers:
 	; dw SwaggerAnim
 	dw SweetKissAnim
 	dw SweetScentAnim
-	; dw TripleKickAnim
+	dw TripleKickAnim
 	dw TwisterAnim
 	dw VitalThrowAnim
 	dw WhirlpoolAnim
@@ -428,7 +428,7 @@ DoubleKickAnim:
 	battle_anim DOUBLE_KICK, SUBANIM_0_STAR_TWICE, 0, 8
 	db -1 ; end
 
-; TripleKickAnim:
+TripleKickAnim:
 MegaKickAnim:
 	battle_anim MEGA_KICK, SUBANIM_1_STAR_BIG_MOVING, 1, 6
 	db -1 ; end

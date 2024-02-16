@@ -944,6 +944,9 @@ TwoToFiveAttacksEffect:
 	cp ATTACK_TWICE_EFFECT
 	ld a, $2 ; number of hits it's always 2 for ATTACK_TWICE_EFFECT
 	jr z, .saveNumberOfHits
+	cp TRIPLE_KICK_EFFECT
+	ld a, $3 ; number of hits it's always 3 for TRIPLE_KICK_EFFECT
+	jr z, .saveNumberOfHits
 ; for TWO_TO_FIVE_ATTACKS_EFFECT 3/8 chance for 2 and 3 hits, and 1/8 chance for 4 and 5 hits
 	call BattleRandom
 	and $3

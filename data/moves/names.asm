@@ -224,7 +224,7 @@ MoveNames::
 	; li "SWAGGER"
 	li "SWEET KISS"
 	li "SWEET SCENT"
-	; li "TRIPLE KICK"
+	li "TRIPLE KICK"
 	li "TWISTER"
 	li "VITAL THROW"
 	li "WHIRLPOOL"

@@ -230,7 +230,7 @@
 	; const SWAGGER      ; de
 	const SWEET_KISS   ; df
 	const SWEET_SCENT  ; e0
-	; const TRIPLE_KICK  ; e1
+	const TRIPLE_KICK  ; e1
 	const TWISTER      ; e2
 	const VITAL_THROW  ; e3
 	const WHIRLPOOL    ; e4
