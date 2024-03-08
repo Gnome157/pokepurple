@@ -168,7 +168,7 @@ MoveNames::
 	; li "ANCIENTPOWER"
 	; li "BATON PASS"
 	; li "BELLY DRUM"
-	; li "BONE RUSH"
+	li "BONE RUSH"
 	li "CHARM"
 	; li "CONVERSION2"
 	li "COTTON SPORE"

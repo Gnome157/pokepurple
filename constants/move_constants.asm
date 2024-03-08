@@ -223,7 +223,7 @@
 	; const SLEEP_TALK   ; d7
 	const SLUDGE_BOMB  ; d8
 	; const SNORE        ; d9
-	; const SPARK        ; da
+	const SPARK        ; da
 	; const SPIDER_WEB   ; db
 	; const SPIKES       ; dc
 	; const SPITE        ; dd

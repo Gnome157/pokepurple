@@ -116,7 +116,7 @@ DEF NUM_FLOORS EQU const_value - 1 - NUM_ITEMS
 ; HMs are defined before TMs, so the actual number of TM definitions
 ; is not yet available. The TM quantity is hard-coded here and must
 ; match the actual number below.
-DEF NUM_TMS EQU 51
+DEF NUM_TMS EQU 50
 
 DEF __tmhm_value__ = NUM_TMS + 1
 
@@ -207,7 +207,7 @@ DEF TM01 EQU const_value
 	add_tm ROCK_SLIDE   ; $F8
 	add_tm TRI_ATTACK   ; $F9
 	add_tm SUBSTITUTE   ; $FA
-	add_tm HEADBUTT     ; $FB
+	; $FB
 	; $FC
 	; $FD
 	; $FE

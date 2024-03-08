@@ -180,7 +180,7 @@ Moves:
 	; move ANCIENT_POWER,ANCIENT_POWER_EFFECT,        60, ROCK,         100,  5
 	; move BATON_PASS,   BATON_PASS_EFFECT,            0, NORMAL,       100, 40
 	; move BELLY_DRUM,   BELLY_DRUM_EFFECT,            0, NORMAL,       100, 10
-	; move BONE_RUSH,    TWO_TO_FIVE_ATTACKS_EFFECT,  25, GROUND,        90, 10
+	move BONE_RUSH,    TWO_TO_FIVE_ATTACKS_EFFECT,  25, GROUND,        90, 10
 	move CHARM,        ATTACK_DOWN2_EFFECT,          0, NORMAL,       100, 20
 	; move CONVERSION_2, CONVERSION_2_EFFECT,          0, NORMAL,       100, 30
 	move COTTON_SPORE, SPEED_DOWN1_EFFECT,           0, GRASS,        100, 40

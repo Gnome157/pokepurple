@@ -168,7 +168,7 @@ AttackAnimationPointers:
 	; dw AncientPowerAnim
 	; dw BatonPassAnim
 	; dw BellyDrumAnim
-	; dw BoneRushAnim
+	dw BoneRushAnim
 	dw CharmAnim
 	; dw Conversion2Anim
 	dw CottonSporeAnim
