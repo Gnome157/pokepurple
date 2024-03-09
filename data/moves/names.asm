@@ -236,5 +236,9 @@ MoveNames::
 	li "METAL CLAW"
 	; li "PURSUIT"
 	li "STEEL WING"
+	li "MILK DRINK"
+	li "MOONLIGHT"
+	li "MORNINGSUN"
+	li "SYNTHESIS"
 	li "STRUGGLE"
 	assert_list_length NUM_ATTACKS

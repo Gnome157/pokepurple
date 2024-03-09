@@ -226,9 +226,7 @@ FightingDojoBlackbelt4AfterBattleText:
 
 FightingDojoHitmonleePokeBallText:
 	text_asm
-	CheckEitherEventSet EVENT_GOT_HITMONLEE, EVENT_GOT_HITMONCHAN
-	jr z, .GetMon
-	ld hl, FightingDojoBetterNotGetGreedyText
+	ld hl, .GetMon
 	call PrintText
 	jr .done
 .GetMon
@@ -260,9 +258,7 @@ FightingDojoHitmonleePokeBallText:
 
 FightingDojoHitmonchanPokeBallText:
 	text_asm
-	CheckEitherEventSet EVENT_GOT_HITMONLEE, EVENT_GOT_HITMONCHAN
-	jr z, .GetMon
-	ld hl, FightingDojoBetterNotGetGreedyText
+	ld hl, .GetMon
 	call PrintText
 	jr .done
 .GetMon
@@ -290,6 +286,42 @@ FightingDojoHitmonchanPokeBallText:
 
 .Text:
 	text_far _FightingDojoHitmonchanPokeBallText
+	text_end
+
+FightingDojoBetterNotGetGreedyText:
+	text_far _FightingDojoBetterNotGetGreedyText
+	text_end
+
+FightingDojoHitmontopPokeBallText:
+	text_asm
+	ld hl, .GetMon
+	call PrintText
+	jr .done
+.GetMon
+	ld a, HITMONTOP
+	call DisplayPokedex
+	ld hl, .Text
+	call PrintText
+	call YesNoChoice
+	ld a, [wCurrentMenuItem]
+	and a
+	jr nz, .done
+	ld a, [wcf91]
+	ld b, a
+	ld c, 30
+	call GivePokemon
+	jr nc, .done
+	SetEvents EVENT_GOT_HITMONTOP, EVENT_DEFEATED_FIGHTING_DOJO
+
+	; once Poké Ball is taken, hide sprite
+	ld a, HS_FIGHTING_DOJO_GIFT_2
+	ld [wMissableObjectIndex], a
+	predef HideObject
+.done
+	jp TextScriptEnd
+
+.Text:
+	text_far _FightingDojoHitmontopPokeBallText
 	text_end
 
 FightingDojoBetterNotGetGreedyText:

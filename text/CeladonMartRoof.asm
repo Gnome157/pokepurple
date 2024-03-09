@@ -44,14 +44,14 @@ _CeladonMartRoofLittleGirlYaySodaPopText::
 	line "from me!@"
 	text_end
 
-_CeladonMartRoofLittleGirlReceivedTM48Text::
+_CeladonMartRoofLittleGirlReceivedTM09Text::
 	text "<PLAYER> received"
 	line "@"
 	text_ram wStringBuffer
 	text "!@"
 	text_end
 
-_CeladonMartRoofLittleGirlTM48ExplanationText::
+_CeladonMartRoofLittleGirlTM09ExplanationText::
 	text_start
 
 	para "@"

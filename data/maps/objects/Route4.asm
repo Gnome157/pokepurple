@@ -1,7 +1,7 @@
 	object_const_def
 	const ROUTE4_COOLTRAINER_F1
 	const ROUTE4_COOLTRAINER_F2
-	const ROUTE4_TM_WHIRLWIND
+	; const ROUTE4_TM_WHIRLWIND
 
 Route4_Object:
 	db $2c ; border block

@@ -15,20 +15,20 @@ PowerPlant_ScriptPointers:
 
 PowerPlant_TextPointers:
 	def_text_pointers
-	dw_const PowerPlantVoltorb1Text,   TEXT_POWERPLANT_VOLTORB1
-	dw_const PowerPlantVoltorb2Text,   TEXT_POWERPLANT_VOLTORB2
-	dw_const PowerPlantVoltorb3Text,   TEXT_POWERPLANT_VOLTORB3
-	dw_const PowerPlantElectrode1Text, TEXT_POWERPLANT_ELECTRODE1
-	dw_const PowerPlantVoltorb4Text,   TEXT_POWERPLANT_VOLTORB4
-	dw_const PowerPlantVoltorb5Text,   TEXT_POWERPLANT_VOLTORB5
-	dw_const PowerPlantElectrode2Text, TEXT_POWERPLANT_ELECTRODE2
-	dw_const PowerPlantVoltorb6Text,   TEXT_POWERPLANT_VOLTORB6
+	; dw_const PowerPlantVoltorb1Text,   TEXT_POWERPLANT_VOLTORB1
+	; dw_const PowerPlantVoltorb2Text,   TEXT_POWERPLANT_VOLTORB2
+	; dw_const PowerPlantVoltorb3Text,   TEXT_POWERPLANT_VOLTORB3
+	; dw_const PowerPlantElectrode1Text, TEXT_POWERPLANT_ELECTRODE1
+	; dw_const PowerPlantVoltorb4Text,   TEXT_POWERPLANT_VOLTORB4
+	; dw_const PowerPlantVoltorb5Text,   TEXT_POWERPLANT_VOLTORB5
+	; dw_const PowerPlantElectrode2Text, TEXT_POWERPLANT_ELECTRODE2
+	; dw_const PowerPlantVoltorb6Text,   TEXT_POWERPLANT_VOLTORB6
 	dw_const PowerPlantZapdosText,     TEXT_POWERPLANT_ZAPDOS
-	dw_const PickUpItemText,           TEXT_POWERPLANT_CARBOS
-	dw_const PickUpItemText,           TEXT_POWERPLANT_HP_UP
-	dw_const PickUpItemText,           TEXT_POWERPLANT_RARE_CANDY
-	dw_const PickUpItemText,           TEXT_POWERPLANT_TM_THUNDER
-	dw_const PickUpItemText,           TEXT_POWERPLANT_TM_REFLECT
+	; dw_const PickUpItemText,           TEXT_POWERPLANT_CARBOS
+	; dw_const PickUpItemText,           TEXT_POWERPLANT_HP_UP
+	; dw_const PickUpItemText,           TEXT_POWERPLANT_RARE_CANDY
+	; dw_const PickUpItemText,           TEXT_POWERPLANT_TM_THUNDER
+	; dw_const PickUpItemText,           TEXT_POWERPLANT_TM_REFLECT
 
 PowerPlantTrainerHeaders:
 	def_trainers

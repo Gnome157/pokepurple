@@ -119,7 +119,7 @@
 	const EVENT_GOT_TM41
 	const_skip 11
 	const EVENT_GOT_TM13
-	const EVENT_GOT_TM48
+	const EVENT_GOT_TM09
 	const EVENT_GOT_TM49
 	const EVENT_GOT_TM18
 	const_skip 24
@@ -203,6 +203,7 @@
 	const EVENT_BEAT_FIGHTING_DOJO_TRAINER_3
 	const EVENT_GOT_HITMONLEE
 	const EVENT_GOT_HITMONCHAN
+	const EVENT_GOT_HITMONTOP
 	const_skip 8
 	const EVENT_GOT_TM46
 	const EVENT_BEAT_SABRINA
@@ -216,7 +217,7 @@
 	const_skip 46
 	const EVENT_SILPH_CO_RECEPTIONIST_AT_DESK
 	const_skip 24
-	const EVENT_GOT_TM29
+	const EVENT_GOT_TM48
 
 ; Route 1 events
 	const_next $3C0

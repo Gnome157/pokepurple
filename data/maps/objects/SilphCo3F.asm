@@ -2,7 +2,7 @@
 	const SILPHCO3F_SILPH_WORKER_M
 	const SILPHCO3F_ROCKET
 	const SILPHCO3F_SCIENTIST
-	const SILPHCO3F_HYPER_POTION
+	; const SILPHCO3F_HYPER_POTION
 
 SilphCo3F_Object:
 	db $2e ; border block

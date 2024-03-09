@@ -1,6 +1,6 @@
 	object_const_def
-	const ROUTE2_MOON_STONE
-	const ROUTE2_HP_UP
+	; const ROUTE2_MOON_STONE
+	; const ROUTE2_HP_UP
 
 Route2_Object:
 	db $f ; border block
@@ -18,8 +18,8 @@ Route2_Object:
 	bg_event 11, 11, TEXT_ROUTE2_DIGLETTS_CAVE_SIGN
 
 	def_object_events
-	object_event 13, 54, SPRITE_POKE_BALL, STAY, NONE, TEXT_ROUTE2_MOON_STONE, MOON_STONE
-	object_event 13, 45, SPRITE_POKE_BALL, STAY, NONE, TEXT_ROUTE2_HP_UP, HP_UP
+	; object_event 13, 54, SPRITE_POKE_BALL, STAY, NONE, TEXT_ROUTE2_MOON_STONE, MOON_STONE
+	; object_event 13, 45, SPRITE_POKE_BALL, STAY, NONE, TEXT_ROUTE2_HP_UP, HP_UP
 
 	def_warps_to ROUTE_2
 

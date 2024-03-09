@@ -7,8 +7,8 @@
 	const SILPHCO6F_ROCKET1
 	const SILPHCO6F_SCIENTIST
 	const SILPHCO6F_ROCKET2
-	const SILPHCO6F_HP_UP
-	const SILPHCO6F_X_ACCURACY
+	; const SILPHCO6F_HP_UP
+	; const SILPHCO6F_X_ACCURACY
 
 SilphCo6F_Object:
 	db $2e ; border block

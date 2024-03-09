@@ -8,7 +8,7 @@
 	const ROUTE25_HIKER1
 	const ROUTE25_HIKER2
 	const ROUTE25_HIKER3
-	const ROUTE25_TM_SEISMIC_TOSS
+	; const ROUTE25_TM_SEISMIC_TOSS
 
 Route25_Object:
 	db $2c ; border block

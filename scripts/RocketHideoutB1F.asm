@@ -43,8 +43,8 @@ RocketHideoutB1F_TextPointers:
 	dw_const RocketHideoutB1FRocket3Text, TEXT_ROCKETHIDEOUTB1F_ROCKET3
 	dw_const RocketHideoutB1FRocket4Text, TEXT_ROCKETHIDEOUTB1F_ROCKET4
 	dw_const RocketHideoutB1FRocket5Text, TEXT_ROCKETHIDEOUTB1F_ROCKET5
-	dw_const PickUpItemText,              TEXT_ROCKETHIDEOUTB1F_ESCAPE_ROPE
-	dw_const PickUpItemText,              TEXT_ROCKETHIDEOUTB1F_HYPER_POTION
+	; dw_const PickUpItemText,              TEXT_ROCKETHIDEOUTB1F_ESCAPE_ROPE
+	; dw_const PickUpItemText,              TEXT_ROCKETHIDEOUTB1F_HYPER_POTION
 
 RocketHideout1TrainerHeaders:
 	def_trainers

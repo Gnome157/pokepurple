@@ -7,8 +7,8 @@
 	const ROUTE12_FISHER3
 	const ROUTE12_FISHER4
 	const ROUTE12_FISHER5
-	const ROUTE12_TM_PAY_DAY
-	const ROUTE12_IRON
+	; const ROUTE12_TM_PAY_DAY
+	; const ROUTE12_IRON
 
 Route12_Object:
 	db $43 ; border block

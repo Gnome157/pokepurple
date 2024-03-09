@@ -130,26 +130,15 @@ FuchsiaCityLaprasSignText:
 
 FuchsiaCityFossilSignText:
 	text_asm
-	CheckEvent EVENT_GOT_DOME_FOSSIL
-	jr nz, .got_dome_fossil
-	CheckEventReuseA EVENT_GOT_HELIX_FOSSIL
-	jr nz, .got_helix_fossil
-	ld hl, .UndeterminedText
-	call PrintText
-	jr .done
-.got_dome_fossil
 	ld hl, .OmanyteText
-	call PrintText
-	ld a, OMANYTE
-	jr .display
-.got_helix_fossil
-	ld hl, .KabutoText
-	call PrintText
-	ld a, KABUTO
-.display
-	call DisplayPokedex
-.done
-	jp TextScriptEnd
+    call PrintText
+    ld a, OMANYTE
+    call DisplayPokedex
+    ld hl, .KabutoText
+    call PrintText
+    ld a, KABUTO
+    call DisplayPokedex
+    jp TextScriptEnd
 
 .OmanyteText:
 	text_far _FuchsiaCityFossilSignOmanyteText

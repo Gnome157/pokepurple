@@ -9,7 +9,7 @@
 	const ROUTE15_BIKER2
 	const ROUTE15_COOLTRAINER_F3
 	const ROUTE15_COOLTRAINER_F4
-	const ROUTE15_TM_RAGE
+	; const ROUTE15_TM_RAGE
 
 Route15_Object:
 	db $43 ; border block

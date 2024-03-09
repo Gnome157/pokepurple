@@ -8,7 +8,7 @@
 	const ROUTE9_YOUNGSTER_1
 	const ROUTE9_HIKER_3
 	const ROUTE9_YOUNGSTER_2
-	const ROUTE9_TM_TELEPORT
+	; const ROUTE9_TM_TELEPORT
 
 Route9_Object:
 	db $2c ; border block

@@ -19,20 +19,20 @@ CopycatsHouse2FCopycatText:
 	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
 	ld hl, .DoYouLikePokemonText
 	call PrintText
-	ld b, POKE_DOLL
-	call IsItemInBag
+	; ld b, POKE_DOLL
+	; call IsItemInBag
 	jr z, .done
-	ld hl, .TM31PreReceiveText
-	call PrintText
-	lb bc, TM_MIMIC, 1
-	call GiveItem
-	jr nc, .bag_full
-	ld hl, .ReceivedTM31Text
-	call PrintText
-	ld a, POKE_DOLL
-	ldh [hItemToRemoveID], a
-	farcall RemoveItemByID
-	SetEvent EVENT_GOT_TM31
+	; ld hl, .TM31PreReceiveText
+	; call PrintText
+	; lb bc, TM_MIMIC, 1
+	; call GiveItem
+	; jr nc, .bag_full
+	; ld hl, .ReceivedTM31Text
+	; call PrintText
+	; ld a, POKE_DOLL
+	; ldh [hItemToRemoveID], a
+	; farcall RemoveItemByID
+	; SetEvent EVENT_GOT_TM31
 	jr .done
 .bag_full
 	ld hl, .TM31NoRoomText

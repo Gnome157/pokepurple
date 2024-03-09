@@ -164,8 +164,8 @@ MtMoonB2F_TextPointers:
 	dw_const MtMoonB2FRocket4Text,                 TEXT_MTMOONB2F_ROCKET4
 	dw_const MtMoonB2FDomeFossilText,              TEXT_MTMOONB2F_DOME_FOSSIL
 	dw_const MtMoonB2FHelixFossilText,             TEXT_MTMOONB2F_HELIX_FOSSIL
-	dw_const PickUpItemText,                       TEXT_MTMOONB2F_HP_UP
-	dw_const PickUpItemText,                       TEXT_MTMOONB2F_TM_MEGA_PUNCH
+	; dw_const PickUpItemText,                       TEXT_MTMOONB2F_HP_UP
+	; dw_const PickUpItemText,                       TEXT_MTMOONB2F_TM_MEGA_PUNCH
 	dw_const MtMoonB2FSuperNerdThenThisIsMineText, TEXT_MTMOONB2F_SUPER_NERD_THEN_THIS_IS_MINE
 
 MtMoon3TrainerHeaders:
@@ -255,9 +255,9 @@ MtMoonB2FDomeFossilText:
 	ld [wMissableObjectIndex], a
 	predef HideObject
 	SetEvent EVENT_GOT_DOME_FOSSIL
-	ld a, SCRIPT_MTMOONB2F_MOVE_SUPER_NERD
-	ld [wMtMoonB2FCurScript], a
-	ld [wCurMapScript], a
+	; ld a, SCRIPT_MTMOONB2F_MOVE_SUPER_NERD
+	; ld [wMtMoonB2FCurScript], a
+	; ld [wCurMapScript], a
 .done
 	jp TextScriptEnd
 
@@ -283,9 +283,9 @@ MtMoonB2FHelixFossilText:
 	ld [wMissableObjectIndex], a
 	predef HideObject
 	SetEvent EVENT_GOT_HELIX_FOSSIL
-	ld a, SCRIPT_MTMOONB2F_MOVE_SUPER_NERD
-	ld [wMtMoonB2FCurScript], a
-	ld [wCurMapScript], a
+	; ld a, SCRIPT_MTMOONB2F_MOVE_SUPER_NERD
+	; ld [wMtMoonB2FCurScript], a
+	; ld [wCurMapScript], a
 .done
 	jp TextScriptEnd
 

@@ -236,6 +236,10 @@ AttackAnimationPointers:
 	dw MetalClawAnim
 	; dw PursuitAnim
 	dw SteelWingAnim
+	dw MilkDrinkAnim
+	dw MoonlightAnim
+	dw MorningSunAnim
+	dw SynthesisAnim
 	dw StruggleAnim
 	assert_table_length NUM_ATTACKS
 AlternativeAnimationPointers:
@@ -914,6 +918,10 @@ DoubleTeamAnim:
 	battle_anim BARRIER, SUBANIM_1_BARRIER, 1, 6
 	db -1 ; end
 
+MilkDrinkAnim:
+MoonlightAnim:
+MorningSunAnim:
+SynthesisAnim:
 ; PainSplitAnim:
 RecoverAnim:
 	battle_anim RECOVER, SE_BLINK_MON

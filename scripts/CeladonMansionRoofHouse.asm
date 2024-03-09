@@ -4,7 +4,7 @@ CeladonMansionRoofHouse_Script:
 CeladonMansionRoofHouse_TextPointers:
 	def_text_pointers
 	dw_const CeladonMansionRoofHouseHikerText,         TEXT_CELADONMANSION_ROOF_HOUSE_HIKER
-	dw_const CeladonMansionRoofHouseEeveePokeballText, TEXT_CELADONMANSION_ROOF_HOUSE_EEVEE_POKEBALL
+	; dw_const CeladonMansionRoofHouseEeveePokeballText, TEXT_CELADONMANSION_ROOF_HOUSE_EEVEE_POKEBALL
 
 CeladonMansionRoofHouseHikerText:
 	text_far _CeladonMansionRoofHouseHikerText

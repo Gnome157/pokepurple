@@ -6,7 +6,7 @@
 	const ROUTE24_YOUNGSTER_1
 	const ROUTE24_COOLTRAINER_F2
 	const ROUTE24_YOUNGSTER_2
-	const ROUTE24_TM_THUNDER_WAVE
+	; const ROUTE24_TM_THUNDER_WAVE
 
 Route24_Object:
 	db $2c ; border block
