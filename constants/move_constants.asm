@@ -174,7 +174,7 @@
 	; const ANCIENT_POWER; a6
 	; const BATON_PASS   ; a7
 	; const BELLY_DRUM   ; a8
-	; const BONE_RUSH    ; a9
+	const BONE_RUSH    ; a9
 	const CHARM        ; aa
 	; const CONVERSION_2 ; ab
 	const COTTON_SPORE ; ac
@@ -213,7 +213,7 @@
 	; const PROTECT      ; cd
 	; const PSYCH_UP     ; ce
 	; const RAPID_SPIN   ; cf
-	; const REVERSAL     ; d0
+	const REVERSAL     ; d0
 	const ROCK_SMASH   ; d1
 	const ROLLOUT      ; d2
 	const SACRED_FIRE  ; d3
@@ -242,10 +242,10 @@
 	const METAL_CLAW   ; ea
 	; const PURSUIT      ; eb
 	const STEEL_WING   ; ec
-	; const ; ed
-	; const ; ee
-	; const ; ef
-	; const ; f0
+	const MILK_DRINK   ; ed
+	const MOONLIGHT    ; ee
+	const MORNING_SUN  ; ef
+	const SYNTHESIS    ; f0
 	; const ; f1
 	; const ; f2
 	; const ; f3

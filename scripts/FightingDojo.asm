@@ -323,7 +323,3 @@ FightingDojoHitmontopPokeBallText:
 .Text:
 	text_far _FightingDojoHitmontopPokeBallText
 	text_end
-
-FightingDojoBetterNotGetGreedyText:
-	text_far _FightingDojoBetterNotGetGreedyText
-	text_end

@@ -168,7 +168,7 @@ DEF TM01 EQU const_value
 	add_tm ROCK_SLIDE    ; $D1
 	add_tm BUBBLE        ; $D2
 	add_tm BUBBLEBEAM    ; $D3
-	add_tm THUNDER_SHOCK ; $D4
+	add_tm THUNDERSHOCK  ; $D4
 	add_tm SPARK         ; $D5
 	add_tm SLUDGE        ; $D6
 	add_tm SLUDGE_BOMB   ; $D7
@@ -177,12 +177,12 @@ DEF TM01 EQU const_value
 	add_tm EMBER         ; $DA
 	add_tm FLAME_WHEEL   ; $DB
 	add_tm DIG           ; $DC
-	add_tm EARTHBADGE    ; $DD
+	add_tm EARTHQUAKE    ; $DD
 	add_tm DOUBLE_TEAM   ; $DE
 	add_tm POWDER_SNOW   ; $DF
 	add_tm AURORA_BEAM   ; $E0
 	add_tm JUMP_KICK     ; $E1
-	add_tm HIGH_JUMP_KICK; $E2
+	add_tm HI_JUMP_KICK  ; $E2
 	add_tm LICK          ; $E3
 	add_tm SHADOW_BALL   ; $E4
 	add_tm TWISTER       ; $E5
@@ -190,23 +190,23 @@ DEF TM01 EQU const_value
 	add_tm FIRE_SPIN     ; $E7
 	add_tm WHIRLPOOL     ; $E8
 	add_tm TRI_ATTACK    ; $E9
-	add_tm RECOVER       ; $EA
-	add_tm MILK_DRINK    ; $EB
-	add_tm MOONLIGHT     ; $EC
-	add_tm SYNTHESIS     ; $ED
-	add_tm ICE_PUNCH     ; $EE
-	add_tm THUNDER_PUNCH ; $EF
-	add_tm FIRE_PUNCH    ; $F0
-	add_tm ICE_BEAM      ; $F1
-	add_tm THUNDERBOLT   ; $F2
-	add_tm FLAMETHROWER  ; $F3
-	add_tm BLIZZARD      ; $F4
-	add_tm THUNDER       ; $F5
-	add_tm FIRE_BLAST    ; $F6
-	add_tm PSYCHIC_M     ; $F7
-	add_tm SUBSTITUTE    ; $F8
-	add_tm HYPER_BEAM    ; $F9
-	; $FA
+	add_tm SWORDS_DANCE  ; $EA
+	add_tm BARRIER       ; $EB
+	add_tm AMNESIA       ; $EC
+	add_tm AGILITY       ; $ED
+	add_tm MINIMIZE      ; $EE
+	add_tm ICE_PUNCH     ; $EF
+	add_tm THUNDERPUNCH  ; $F0
+	add_tm FIRE_PUNCH    ; $F1
+	add_tm ICE_BEAM      ; $F2
+	add_tm THUNDERBOLT   ; $F3
+	add_tm FLAMETHROWER  ; $F4
+	add_tm BLIZZARD      ; $F5
+	add_tm THUNDER       ; $F6
+	add_tm FIRE_BLAST    ; $F7
+	add_tm PSYCHIC_M     ; $F8
+	add_tm SUBSTITUTE    ; $F9
+	add_tm HYPER_BEAM    ; $FA
 	; $FB
 	; $FC
 	; $FD

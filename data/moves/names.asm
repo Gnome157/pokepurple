@@ -207,7 +207,7 @@ MoveNames::
 	; li "PROTECT"
 	; li "PSYCH UP"
 	; li "RAPID SPIN"
-	; li "REVERSAL"
+	li "REVERSAL"
 	li "ROCK SMASH"
 	li "ROLLOUT"
 	li "SACRED FIRE"
